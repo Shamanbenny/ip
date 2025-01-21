@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.stream.Stream;
 
 /**
  * A playful and motivational chatbot assistant for late-night coding sessions.
@@ -8,6 +10,7 @@ import java.util.Scanner;
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
+    private static ArrayList<String> tasks = new ArrayList<>();
 
     private static void printWelcome() {
         String logo = """
@@ -31,7 +34,30 @@ public class NightCoder {
                 \tsleep-deprived) coding companion. Whether it’s wrangling deadlines, or organizing your todo
                 \tlist, I’m here to lend a hand.""");
         System.out.println("\n\tLet’s make some magic together. What’s on the docket tonight? \uD83C\uDF1F");
+        System.out.println("\n\tIf you’re unsure about what I can do, just type \"help\", and I’ll get you sorted in no time!");
         System.out.println(NightCoder.lineBreak + "\n");
+    }
+
+    private static void printHelp() {
+        System.out.println("""
+                \t🌙 Night Code Command Guide ☕️
+                
+                \tNeed a hand? No problem! Here’s what I can do for you:
+                
+                \t    help
+                \t    - Prints this handy guide. Because even pros need reminders sometimes.
+                
+                \t    add <String>
+                \t    - Adds a task to your to-do list. Just tell me what needs doing, and I’ll keep track. 
+                \t      Example: add Finish the project report.
+                
+                \t    list
+                \t    - Shows all your tasks. Think of it as your personal task constellation.
+                
+                \t    bye
+                \t    - Exits the program. But don’t be a stranger—I’ll be here when you need me again!
+                
+                \tGot it? Let’s get back to work! 🚀""");
     }
 
     private static void printExit() {
@@ -60,19 +86,75 @@ public class NightCoder {
         if ("bye".equalsIgnoreCase(userInput)) {
             return false; // Return false if the input is "bye"
         }
-        echoCommand(userInput);
+        parseCommand(userInput);
         return true; // Return true for other inputs
     }
 
     /**
-     * Echos the user input back.
+     * Parses the user input and processes the command accordingly.
+     * [Contains SIMPLE attempt at detecting invalid command usage]
      *
-     * @param input The full user input string to be echo-ed back.
+     * @param input The full user input string to be parsed and processed.
      */
-    private static void echoCommand(String input) {
+    private static void parseCommand(String input) {
         System.out.println(NightCoder.lineBreak);
-        System.out.println("\t" + input);
+
+        String[] parts = input.split(" ", 2);
+        String command = parts[0];
+        switch (command) {
+            case "help":
+                printHelp();
+                break;
+            case "add":
+                if (parts.length != 2) {
+                    System.out.println("""
+                        \t⚠️ Oops!
+                        \tIncorrect usage of "add". Type "help" to refer to its appropriate usage. Let’s get back on track! 🚀""");
+                    break;
+                }
+                String params = parts[1];
+                addTask(params);
+                break;
+            case "list":
+                listTasks();
+                break;
+            default:
+                System.out.println("""
+                        \t⚠️ Oops!
+                        \tI didn’t catch that. Type "help" to see the list of commands I understand. Let’s get back on track! 🚀""");
+        }
+
         System.out.println(NightCoder.lineBreak + "\n");
+    }
+
+    /**
+     * Adds a task to the to-do list.
+     *
+     * @param task The task to be added to the list.
+     */
+    private static void addTask(String task) {
+        tasks.add(task);
+        System.out.println("\t✅ Task #" + tasks.size() + " Added: " + task);
+        System.out.println("\tGot it! I’ll keep this safe in your to-do list. Let me know what’s next! 🌟");
+    }
+
+    /**
+     * Displays the list of tasks with their respective indices.
+     * Iterates through the tasks ArrayList and prints each task with its index in a numbered format.
+     * If the list is empty, it will print a message indicating no tasks are available.
+     */
+    private static void listTasks() {
+        if (tasks.isEmpty()) {
+            System.out.println("\t\uD83C\uDF0C Your To-Do List is Empty!");
+            System.out.println("Looks like we’re starting with a clean slate. What shall we tackle first? \uD83C\uDF1F");
+        } else {
+            System.out.print(
+                    // Using Functional Programming learnt from CS2030S to replace the need to use for-loops
+                    Stream.iterate(0, i -> i + 1)
+                            .limit(tasks.size())
+                            .reduce("", (result, index) -> result + "\t" + (index + 1) + ". " + tasks.get(index) + "\n", String::concat)
+            );
+        }
     }
 
     /**
