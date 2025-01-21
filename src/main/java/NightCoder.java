@@ -6,7 +6,7 @@ import java.util.stream.Stream;
  * A playful and motivational chatbot assistant for late-night coding sessions.
  *
  * @author ShamanBenny
- * @version 1.0
+ * @version 2.0
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
