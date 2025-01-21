@@ -1,16 +1,15 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.stream.Stream;
 
 /**
  * A playful and motivational chatbot assistant for late-night coding sessions.
  *
  * @author ShamanBenny
- * @version 2.0
+ * @version 3.0
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
-    private static final ArrayList<String> tasks = new ArrayList<>();
+    private static final ArrayList<Task> tasks = new ArrayList<>();
 
     private static void printWelcome() {
         String logo = """
@@ -128,32 +127,32 @@ public class NightCoder {
     }
 
     /**
-     * Adds a task to the to-do list.
+     * Adds a task to the to-do list. By default, a newly added task is not completed.
      *
-     * @param task The task to be added to the list.
+     * @param description The task to be added to the list.
      */
-    private static void addTask(String task) {
+    private static void addTask(String description) {
+        Task task = new Task(description, false);
         tasks.add(task);
-        System.out.println("\t✅ Task #" + tasks.size() + " Added: " + task);
+        System.out.println("\t✅ Task #" + tasks.size() + " Added: " + description);
         System.out.println("\tGot it! I’ll keep this safe in your to-do list. Let me know what’s next! 🌟");
     }
 
     /**
-     * Displays the list of tasks with their respective indices.
+     * Displays the list of tasks with their respective indices and completeness.
      * Iterates through the tasks ArrayList and prints each task with its index in a numbered format.
      * If the list is empty, it will print a message indicating no tasks are available.
      */
     private static void listTasks() {
         if (tasks.isEmpty()) {
             System.out.println("\t\uD83C\uDF0C Your To-Do List is Empty!");
-            System.out.println("Looks like we’re starting with a clean slate. What shall we tackle first? \uD83C\uDF1F");
+            System.out.println("\tLooks like we’re starting with a clean slate. What shall we tackle first? \uD83C\uDF1F");
         } else {
-            System.out.print(
-                    // Using Functional Programming learnt from CS2030S to replace the need to use for-loops
-                    Stream.iterate(0, i -> i + 1)
-                            .limit(tasks.size())
-                            .reduce("", (result, index) -> result + "\t" + (index + 1) + ". " + tasks.get(index) + "\n", String::concat)
-            );
+            // Refactored from Functional Programming to maintain Readability...
+            for (int idx = 0; idx < tasks.size(); idx++) {
+                Task task = tasks.get(idx);
+                System.out.println("\t" + idx + "." + task);
+            }
         }
     }
 
