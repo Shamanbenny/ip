@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
-    private static ArrayList<String> tasks = new ArrayList<>();
+    private static final ArrayList<String> tasks = new ArrayList<>();
 
     private static void printWelcome() {
         String logo = """
@@ -48,7 +48,7 @@ public class NightCoder {
                 \t    - Prints this handy guide. Because even pros need reminders sometimes.
                 
                 \t    add <String>
-                \t    - Adds a task to your to-do list. Just tell me what needs doing, and I’ll keep track. 
+                \t    - Adds a task to your to-do list. Just tell me what needs doing, and I’ll keep track.
                 \t      Example: add Finish the project report.
                 
                 \t    list
@@ -100,7 +100,7 @@ public class NightCoder {
         System.out.println(NightCoder.lineBreak);
 
         String[] parts = input.split(" ", 2);
-        String command = parts[0];
+        String command = parts[0].toLowerCase();
         switch (command) {
             case "help":
                 printHelp();
