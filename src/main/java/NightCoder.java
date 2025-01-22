@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * A playful and motivational chatbot assistant for late-night coding sessions.
  *
  * @author ShamanBenny
- * @version 4.0
+ * @version 4.5
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
