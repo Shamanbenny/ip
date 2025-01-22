@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
+    private static Scanner scanner;
     private static final ArrayList<Task> tasks = new ArrayList<>();
 
     private static void printWelcome() {
@@ -29,7 +30,7 @@ public class NightCoder {
         System.out.println("\tBooting Up...\n");
         System.out.println("""
                 \tAh, there you are! The moon is bright, the code is flowing, and caffeine-wait, I mean
-                \tmotivation—fuels our mission tonight. Welcome back to Night Coder, your loyal (and slightly
+                \tmotivation-fuels our mission tonight. Welcome back to Night Coder, your loyal (and slightly
                 \tsleep-deprived) coding companion. Whether it's wrangling deadlines, or organizing your todo
                 \tlist, I'm here to lend a hand.""");
         System.out.println("\n\tLet's make some magic together. What's on the docket tonight?");
@@ -46,7 +47,7 @@ public class NightCoder {
         System.out.println("""
                 \t[ Oops! ]
                 \tIncorrect usage of""" + " \"" + command + "\"" + """
-                . Type "help" to refer to its appropriate usage. Let's get back on track! 🚀""");
+                . Type "help" to refer to its appropriate usage. Let's get back on track!""");
     }
 
     private static void printHelp() {
@@ -79,7 +80,7 @@ public class NightCoder {
                 \t    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
                 
                 \t    bye
-                \t    - Exits the program. But don't be a stranger—I'll be here when you need me again!
+                \t    - Exits the program. But don't be a stranger-I'll be here when you need me again!
                 
                 \tGot it? Let's get back to work!""");
     }
@@ -88,7 +89,7 @@ public class NightCoder {
         System.out.println(NightCoder.lineBreak);
         System.out.println("""
                 
-                \tAlright, signing off for now. Remember, even the brightest coders need some rest—yes, I'm
+                \tAlright, signing off for now. Remember, even the brightest coders need some rest-yes, I'm
                 \tlooking at you! ( 0 w 0 )""");
         System.out.println("""
                 \tIf you need me, you know where to find me. Until next time, keep dreaming big, debugging smart,
@@ -106,7 +107,6 @@ public class NightCoder {
      * @return {@code false} if the input is "bye", {@code true} otherwise.
      */
     private static boolean getUserInput() {
-        Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine().trim(); // Trim to remove extra spaces
 
         if ("bye".equalsIgnoreCase(userInput)) {
@@ -331,9 +331,12 @@ public class NightCoder {
      */
     public static void main(String[] args) {
         printWelcome();
-        while (true) {
-            if (!getUserInput()) {
-                break;
+        try (Scanner scannerInstance = new Scanner(System.in)) {
+            scanner = scannerInstance;
+            while (true) {
+                if (!getUserInput()) {
+                    break;
+                }
             }
         }
         printExit();
