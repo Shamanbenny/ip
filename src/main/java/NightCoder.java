@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * A playful and motivational chatbot assistant for late-night coding sessions.
  *
  * @author ShamanBenny
- * @version 3.0
+ * @version 4.0
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
@@ -116,7 +116,7 @@ public class NightCoder {
      * @param input The full user input string to be parsed and processed.
      */
     private static void parseCommand(String input) {
-        // [TO-DO] Add Error Handling for Failing Integer Parsing for "mark" and "unmark"
+        // TODO: Add Error Handling for Failing Integer Parsing for "mark" and "unmark"
         System.out.println(NightCoder.lineBreak);
 
         String[] parts = input.split(" ", 2);

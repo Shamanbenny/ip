@@ -4,7 +4,7 @@
  * task information.
  *
  * @author ShamanBenny
- * @version 3.0
+ * @version 4.0
  */
 public class Task {
     private final String description;
