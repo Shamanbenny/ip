@@ -58,18 +58,26 @@ public class NightCoder {
                 \t    help
                 \t    - Prints this handy guide. Because even pros need reminders sometimes.
                 
-                \t    add <String>
-                \t    - Adds a task to your to-do list. Just tell me what needs doing, and I’ll keep track.
-                \t      Example: add Finish the project report.
+                \t    todo <String>
+                \t    - Adds a to-do task to your list. Just tell me what needs doing, and I’ll keep track.
+                \t      Example: todo Finish the project report
+                
+                \t    deadline <String> /by <String>
+                \t    - Adds a task with a deadline. Perfect for those time-sensitive missions!
+                \t      Example: deadline Submit assignment /by 2025-01-30 23:59
+                
+                \t    event <String> /from <String> /to <String>
+                \t    - Adds an event with a start and end time. Keep your schedule sharp!
+                \t      Example: event Team meeting /from 2025-01-21 3:00 PM /to 2025-01-21 4:00 PM
                 
                 \t    list
                 \t    - Shows all your tasks. Think of it as your personal task constellation.
                 
                 \t    mark <int>
-                \t    - Marks a task as complete. Use the task number from the list. Example: mark 1.
+                \t    - Marks a task as complete. Use the task number from the list. Example: mark 1
                 
                 \t    unmark <int>
-                \t    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1.
+                \t    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
                 
                 \t    bye
                 \t    - Exits the program. But don’t be a stranger—I’ll be here when you need me again!
@@ -125,13 +133,65 @@ public class NightCoder {
             case "help":
                 printHelp();
                 break;
-            case "add":
+            case "todo":
                 if (parts.length != 2) {
-                    printInvalidUsage("add");
+                    printInvalidUsage("todo");
                     break;
                 }
-                String params = parts[1];
-                addTask(params);
+                String todoParams = parts[1];
+                addToDo(todoParams);
+                break;
+            case "deadline":
+                if (parts.length != 2) {
+                    printInvalidUsage("deadline");
+                    break;
+                }
+                String deadlineParams = parts[1];
+                if (!deadlineParams.contains(" /by ")) {
+                    // Missing "/by"
+                    printInvalidUsage("deadline");
+                    break;
+                }
+                String[] deadlineParts = deadlineParams.split(" /by ", 2);
+                if (deadlineParts.length < 2 || deadlineParts[1].isEmpty()) {
+                    // Missing details for task description, "/by", or empty "/by" details.
+                    printInvalidUsage("deadline");
+                    break;
+                }
+                // Correct Usage from here...
+                String deadlineDescription = deadlineParts[0];
+                String deadlineBy = deadlineParts[1];
+                addDeadline(deadlineDescription, deadlineBy);
+                break;
+            case "event":
+                if (parts.length != 2) {
+                    printInvalidUsage("event");
+                    break;
+                }
+                String eventParams = parts[1];
+                if (!eventParams.contains(" /from ") || !eventParams.contains(" /to ")) {
+                    // Missing "/from" or "/to"
+                    printInvalidUsage("event");
+                    break;
+                }
+                int fromIdx = eventParams.indexOf(" /from ");
+                int toIdx = eventParams.indexOf(" /to ");
+                String eventDescription = eventParams.split(" /from | /to ", 2)[0];
+                String fromParams = "";
+                String toParams = "";
+                if (fromIdx < toIdx) {
+                    fromParams = eventParams.substring(fromIdx + 7, toIdx);
+                    toParams = eventParams.substring(toIdx + 5);
+                } else {
+                    fromParams = eventParams.substring(fromIdx + 7);
+                    toParams = eventParams.substring(toIdx + 5, fromIdx);
+                }
+                if (eventDescription.isEmpty() || fromParams.isEmpty() || toParams.isEmpty()) {
+                    printInvalidUsage("event");
+                    break;
+                }
+                // Correct Usage from here...
+                addEvent(eventDescription, fromParams, toParams);
                 break;
             case "list":
                 listTasks();
@@ -161,16 +221,47 @@ public class NightCoder {
         System.out.println(NightCoder.lineBreak + "\n");
     }
 
-    /**
-     * Adds a task to the to-do list. By default, a newly added task is not completed.
-     *
-     * @param description The task to be added to the list.
-     */
-    private static void addTask(String description) {
-        Task task = new Task(description, false);
-        tasks.add(task);
+    private static void printTaskAdded(String description) {
         System.out.println("\t✅ Task #" + tasks.size() + " Added: " + description);
         System.out.println("\tGot it! I’ll keep this safe in your to-do list. Let me know what’s next! 🌟");
+    }
+
+    /**
+     * Adds a ToDo to the list of tasks. By default, a newly added ToDo is not completed.
+     *
+     * @param description The description of the task to be added to the list.
+     */
+    private static void addToDo(String description) {
+        Task task = new ToDo(description, false);
+        tasks.add(task);
+        printTaskAdded(description);
+    }
+
+    /**
+     * Adds a Deadline to the list of tasks. By default, a newly added deadline is not completed.
+     * Requires information on due date
+     *
+     * @param description The description of the task to be added to the list.
+     * @param dueBy A string detailing when the task is due by.
+     */
+    private static void addDeadline(String description, String dueBy) {
+        Task task = new Deadline(description, false, dueBy);
+        tasks.add(task);
+        printTaskAdded(description);
+    }
+
+    /**
+     * Adds a Deadline to the list of tasks. By default, a newly added deadline is not completed.
+     * Requires information on start and end time
+     *
+     * @param description The description of the task to be added to the list.
+     * @param startTime A string detailing when the event starts.
+     * @param endTime A string detailing when the event ends.
+     */
+    private static void addEvent(String description, String startTime, String endTime) {
+        Task task = new Event(description, false, startTime, endTime);
+        tasks.add(task);
+        printTaskAdded(description);
     }
 
     /**
@@ -183,7 +274,6 @@ public class NightCoder {
             System.out.println("\t\uD83C\uDF0C Your To-Do List is Empty!");
             System.out.println("\tLooks like we’re starting with a clean slate. What shall we tackle first? \uD83C\uDF1F");
         } else {
-            // Refactored from Functional Programming to maintain Readability...
             for (int idx = 0; idx < tasks.size(); idx++) {
                 Task task = tasks.get(idx);
                 System.out.println("\t" + (idx+1) + "." + task);
