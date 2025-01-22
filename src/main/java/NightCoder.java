@@ -37,6 +37,13 @@ public class NightCoder {
         System.out.println(NightCoder.lineBreak + "\n");
     }
 
+    private static void printInvalidUsage(String command) {
+        System.out.println("""
+                \t⚠️ Oops!
+                \tIncorrect usage of""" + " \"" + command + "\"" + """
+                . Type "help" to refer to its appropriate usage. Let’s get back on track! 🚀""");
+    }
+
     private static void printHelp() {
         System.out.println("""
                 \t🌙 Night Code Command Guide ☕️
@@ -52,6 +59,12 @@ public class NightCoder {
                 
                 \t    list
                 \t    - Shows all your tasks. Think of it as your personal task constellation.
+                
+                \t    mark <int>
+                \t    - Marks a task as complete. Use the task number from the list. Example: mark 1.
+                
+                \t    unmark <int>
+                \t    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1.
                 
                 \t    bye
                 \t    - Exits the program. But don’t be a stranger—I’ll be here when you need me again!
@@ -106,9 +119,7 @@ public class NightCoder {
                 break;
             case "add":
                 if (parts.length != 2) {
-                    System.out.println("""
-                        \t⚠️ Oops!
-                        \tIncorrect usage of "add". Type "help" to refer to its appropriate usage. Let’s get back on track! 🚀""");
+                    printInvalidUsage("add");
                     break;
                 }
                 String params = parts[1];
@@ -116,6 +127,22 @@ public class NightCoder {
                 break;
             case "list":
                 listTasks();
+                break;
+            case "mark":
+                if (parts.length != 2) {
+                    printInvalidUsage("mark");
+                    break;
+                }
+                int markId = Integer.parseInt(parts[1]);
+                setCompleted(markId, true);
+                break;
+            case "unmark":
+                if (parts.length != 2) {
+                    printInvalidUsage("unmark");
+                    break;
+                }
+                int unmarkId = Integer.parseInt(parts[1]);
+                setCompleted(unmarkId, false);
                 break;
             default:
                 System.out.println("""
@@ -151,7 +178,35 @@ public class NightCoder {
             // Refactored from Functional Programming to maintain Readability...
             for (int idx = 0; idx < tasks.size(); idx++) {
                 Task task = tasks.get(idx);
-                System.out.println("\t" + idx + "." + task);
+                System.out.println("\t" + (idx+1) + "." + task);
+            }
+        }
+    }
+
+    /**
+     * Updates the completion status of a task in the to-do list.
+     * Marks a specified task as completed or incomplete based on the given parameters.
+     * If the provided index is invalid (not in the range of the task list), it displays an error message.
+     *
+     * @param idx       The 1-based index of the task in the list to update.
+     * @param completed A boolean value indicating the desired completion status:
+     *                  {@code true} to mark the task as complete, or {@code false} to mark it as incomplete.
+     */
+    private static void setCompleted(int idx, boolean completed) {
+        if (idx > tasks.size() || idx < 1) {
+            System.out.println("""
+                    \t⚠️ Invalid Task Number!
+                    \tHmm, that number doesn’t match any tasks on your list. Double-check your task list with "list", and try again!""");
+        } else {
+            // idx is originally 1-indexed [Therefore minus 1 to access 0-indexed ListArray]
+            Task task = tasks.get(idx - 1);
+            task.setCompleted(completed);
+            if (completed) {
+                System.out.println("\t✅ Task Marked as Complete!");
+                System.out.println("\tGreat job! Task \"" + task.getDescription() + "\" is now marked as done. On to the next one! 🎉");
+            } else {
+                System.out.println("\t🔄 Task Marked as Incomplete!");
+                System.out.println("\tGot it! Task \"" + task.getDescription() + "\" is back on your to-do list. Let’s tackle it when you’re ready! 🌟");
             }
         }
     }

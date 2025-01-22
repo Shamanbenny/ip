@@ -21,6 +21,10 @@ public class Task {
         this.isCompleted = isCompleted;
     }
 
+    public String getDescription() {
+        return this.description;
+    }
+
     /**
      * Checks if the task is completed.
      *
