@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * A playful and motivational chatbot assistant for late-night coding sessions.
  *
  * @author ShamanBenny
- * @version 5.0
+ * @version 6.0
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
@@ -79,6 +79,9 @@ public class NightCoder {
                 \t    unmark <int>
                 \t    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
                 
+                \t    delete <int>
+                \t    - Deletes a task from your to-do list. Use the task number from the list. Example: delete 2
+                
                 \t    bye
                 \t    - Exits the program. But don't be a stranger-I'll be here when you need me again!
                 
@@ -126,8 +129,10 @@ public class NightCoder {
      * - "list": Displays all tasks with their indices and completion status.
      * - "mark": Marks a task as completed. Requires a valid task index.
      * - "unmark": Marks a task as incomplete. Requires a valid task index.
+     * - "delete": Deletes a task from the list. Requires a valid task index.
      * Error Handling:
      * - For "mark" and "unmark", invalid or non-numeric task IDs result in an error message, and the command is ignored.
+     * - For "delete", invalid or non-numeric task IDs result in an error message, and the command is ignored.
      * - For "todo", "deadline", and "event", missing or invalid arguments result in an error message.
      * - Displays a default error message for unrecognized commands.
      *
@@ -240,6 +245,23 @@ public class NightCoder {
                             \tExample: unmark 1""");
                 }
                 break;
+            case "delete":
+                if (parts.length != 2) {
+                    printInvalidUsage("delete");
+                    break;
+                }
+                try {
+                    // Attempt to parse the task ID
+                    int deleteId = Integer.parseInt(parts[1]);
+                    deleteTask(deleteId);
+                } catch (NumberFormatException e) {
+                    // Handle invalid input for task ID
+                    System.out.println("""
+                            \t[ Invalid Usage! ]
+                            \tHmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+                            \tExample: delete 1""");
+                }
+                break;
             default:
                 System.out.println("""
                         \t[ Oops! ]
@@ -349,6 +371,28 @@ public class NightCoder {
                 System.out.println("\tGot it! Task \"" + task.getDescription() + "\" is back on your to-do list. Let's tackle it when you're ready!");
             }
         }
+    }
+
+    /**
+     * Deletes a task from the to-do list based on its 1-based index.
+     * This method removes a task from the task list if the specified index is valid.
+     * If the index is out of bounds, an error message is displayed, and no task is deleted.
+     *
+     * @param idx       The 1-based index of the task in the list to delete.
+     */
+    private static void deleteTask(int idx) {
+        // Edge-Case ['idx' out of bounds]
+        if (idx > tasks.size() || idx < 1) {
+            System.out.println("""
+                    \t[ Invalid Task Number! ]
+                    \tHmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!""");
+            return;
+        }
+
+        // idx is originally 1-indexed [Therefore minus 1 to access 0-indexed ListArray]
+        Task task = tasks.remove(idx - 1);
+        System.out.println("\t[ Task Deleted! ]");
+        System.out.println("\tTask \"" + task.getDescription() + "\" has been removed from your list. Poof, it's gone! Let me know if there's anything else to tidy up.");
     }
 
     /**

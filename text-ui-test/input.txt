@@ -8,6 +8,9 @@ mark abc
 unmark 1
 unmark -1
 unmark abc
+delete 1
+delete -1
+delete abc
 todo
 list
 todo Test NightCoder's features
@@ -66,6 +69,10 @@ mark 5
 list
 unmark 0
 unmark 5
+list
+delete 0
+list
+delete 3
 list
 help
 bye

@@ -63,6 +63,9 @@
 	    unmark <int>
 	    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
 
+	    delete <int>
+	    - Deletes a task from your to-do list. Use the task number from the list. Example: delete 2
+
 	    bye
 	    - Exits the program. But don't be a stranger-I'll be here when you need me again!
 
@@ -104,6 +107,22 @@
 	[ Invalid Usage! ]
 	Hmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
 	Example: unmark 1
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Usage! ]
+	Hmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+	Example: delete 1
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -410,6 +429,29 @@
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Test NightCoder's features
+	2.[D][ ] Running (By: Tonight)
+	3.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	4.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Deleted! ]
+	Task "Teams meeting" has been removed from your list. Poof, it's gone! Let me know if there's anything else to tidy up.
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Test NightCoder's features
+	2.[D][ ] Running (By: Tonight)
+	3.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
 	[ Night Code Command Guide ]
 	Need a hand? No problem! Here's what I can do for you:
 
@@ -436,6 +478,9 @@
 
 	    unmark <int>
 	    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
+
+	    delete <int>
+	    - Deletes a task from your to-do list. Use the task number from the list. Example: delete 2
 
 	    bye
 	    - Exits the program. But don't be a stranger-I'll be here when you need me again!
