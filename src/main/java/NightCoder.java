@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * A playful and motivational chatbot assistant for late-night coding sessions.
  *
  * @author ShamanBenny
- * @version 6.0
+ * @version 6.5
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
@@ -50,42 +50,60 @@ public class NightCoder {
                 . Type "help" to refer to its appropriate usage. Let's get back on track!""");
     }
 
+    /**
+     * Enum representing the commands supported by the NightCoder application.
+     * Each command is associated with a syntax and a description to provide
+     * help and guidance for users.
+     */
+    private enum CommandHelp {
+        HELP("help", "Prints this handy guide. Because even pros need reminders sometimes."),
+        TODO("todo <String>", "Adds a to-do task to your list. Just tell me what needs doing, and I'll keep track.\n\t      Example: todo Finish the project report"),
+        DEADLINE("deadline <String> /by <String>", "Adds a task with a deadline. Perfect for those time-sensitive missions!\n\t      Example: deadline Submit assignment /by 2025-01-30 23:59"),
+        EVENT("event <String> /from <String> /to <String>", "Adds an event with a start and end time. Keep your schedule sharp!\n\t      Example: event Team meeting /from 2025-01-21 3:00 PM /to 2025-01-21 4:00 PM"),
+        LIST("list", "Shows all your tasks. Think of it as your personal task constellation."),
+        MARK("mark <int>", "Marks a task as complete. Use the task number from the list.\n\t      Example: mark 1"),
+        UNMARK("unmark <int>", "Marks a task as incomplete. Sometimes things need a second look!\n\t      tExample: unmark 1"),
+        DELETE("delete <int>", "Deletes a task from your to-do list. Use the task number from the list.\n\t      Example: delete 2"),
+        BYE("bye", "Exits the program. But don't be a stranger-I'll be here when you need me again!");
+
+        private final String syntax;
+        private final String description;
+
+        /**
+         * Constructs a CommandHelp enum instance with the specified syntax and description.
+         *
+         * @param syntax      The syntax of the command.
+         * @param description The description of the command.
+         */
+        CommandHelp(String syntax, String description) {
+            this.syntax = syntax;
+            this.description = description;
+        }
+
+        public String getSyntax() {
+            return syntax;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+    }
+
+    /**
+     * Prints a detailed guide of all available commands in the NightCoder application.
+     * The guide includes the syntax and description for each command, making it easy for users
+     * to understand and use the application effectively.
+     */
     private static void printHelp() {
-        System.out.println("""
-                \t[ Night Code Command Guide ]
-                \tNeed a hand? No problem! Here's what I can do for you:
-                
-                \t    help
-                \t    - Prints this handy guide. Because even pros need reminders sometimes.
-                
-                \t    todo <String>
-                \t    - Adds a to-do task to your list. Just tell me what needs doing, and I'll keep track.
-                \t      Example: todo Finish the project report
-                
-                \t    deadline <String> /by <String>
-                \t    - Adds a task with a deadline. Perfect for those time-sensitive missions!
-                \t      Example: deadline Submit assignment /by 2025-01-30 23:59
-                
-                \t    event <String> /from <String> /to <String>
-                \t    - Adds an event with a start and end time. Keep your schedule sharp!
-                \t      Example: event Team meeting /from 2025-01-21 3:00 PM /to 2025-01-21 4:00 PM
-                
-                \t    list
-                \t    - Shows all your tasks. Think of it as your personal task constellation.
-                
-                \t    mark <int>
-                \t    - Marks a task as complete. Use the task number from the list. Example: mark 1
-                
-                \t    unmark <int>
-                \t    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
-                
-                \t    delete <int>
-                \t    - Deletes a task from your to-do list. Use the task number from the list. Example: delete 2
-                
-                \t    bye
-                \t    - Exits the program. But don't be a stranger-I'll be here when you need me again!
-                
-                \tGot it? Let's get back to work!""");
+        System.out.println("\t[ Night Code Command Guide ]");
+        System.out.println("\tNeed a hand? No problem! Here's what I can do for you:\n");
+
+        for (CommandHelp cmd : CommandHelp.values()) {
+            System.out.println("\t    " + cmd.getSyntax());
+            System.out.println("\t    - " + cmd.getDescription() + "\n");
+        }
+
+        System.out.println("\tGot it? Let's get back to work!");
     }
 
     private static void printExit() {
@@ -144,6 +162,8 @@ public class NightCoder {
 
         String[] parts = input.split(" ", 2);
         String command = parts[0].toLowerCase();
+        // The switch structure is retained for clarity and readability. Each case acts as a self-contained command handler,
+        // making the code easy to navigate without needing separate function calls for every command.
         switch (command) {
             case "help":
                 printHelp();

@@ -58,13 +58,16 @@
 	    - Shows all your tasks. Think of it as your personal task constellation.
 
 	    mark <int>
-	    - Marks a task as complete. Use the task number from the list. Example: mark 1
+	    - Marks a task as complete. Use the task number from the list.
+	      Example: mark 1
 
 	    unmark <int>
-	    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
+	    - Marks a task as incomplete. Sometimes things need a second look!
+	      tExample: unmark 1
 
 	    delete <int>
-	    - Deletes a task from your to-do list. Use the task number from the list. Example: delete 2
+	    - Deletes a task from your to-do list. Use the task number from the list.
+	      Example: delete 2
 
 	    bye
 	    - Exits the program. But don't be a stranger-I'll be here when you need me again!
@@ -474,13 +477,16 @@
 	    - Shows all your tasks. Think of it as your personal task constellation.
 
 	    mark <int>
-	    - Marks a task as complete. Use the task number from the list. Example: mark 1
+	    - Marks a task as complete. Use the task number from the list.
+	      Example: mark 1
 
 	    unmark <int>
-	    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
+	    - Marks a task as incomplete. Sometimes things need a second look!
+	      tExample: unmark 1
 
 	    delete <int>
-	    - Deletes a task from your to-do list. Use the task number from the list. Example: delete 2
+	    - Deletes a task from your to-do list. Use the task number from the list.
+	      Example: delete 2
 
 	    bye
 	    - Exits the program. But don't be a stranger-I'll be here when you need me again!
