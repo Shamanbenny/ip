@@ -37,6 +37,11 @@ public class NightCoder {
         System.out.println(NightCoder.lineBreak + "\n");
     }
 
+    /**
+     * Prints an error message for incorrect command usage.
+     *
+     * @param command The name of the command for which the usage was invalid.
+     */
     private static void printInvalidUsage(String command) {
         System.out.println("""
                 \t⚠️ Oops!
@@ -87,9 +92,11 @@ public class NightCoder {
     }
 
     /**
-     * Reads user input, checks if the command is "bye". Else, process the command.
+     * Reads user input from the console and processes it as a command.
+     * If the input is "bye" (case-insensitive), the method exits the loop by returning false.
+     * Otherwise, it passes the input to {@link #parseCommand(String)} for further processing.
      *
-     * @return false if the input is "bye", true otherwise.
+     * @return {@code false} if the input is "bye", {@code true} otherwise.
      */
     private static boolean getUserInput() {
         Scanner scanner = new Scanner(System.in);
@@ -103,12 +110,13 @@ public class NightCoder {
     }
 
     /**
-     * Parses the user input and processes the command accordingly.
+     * Parses the user input and executes the corresponding command.
      * [Contains SIMPLE attempt at detecting invalid command usage]
      *
      * @param input The full user input string to be parsed and processed.
      */
     private static void parseCommand(String input) {
+        // [TO-DO] Add Error Handling for Failing Integer Parsing for "mark" and "unmark"
         System.out.println(NightCoder.lineBreak);
 
         String[] parts = input.split(" ", 2);
@@ -187,19 +195,33 @@ public class NightCoder {
      * Updates the completion status of a task in the to-do list.
      * Marks a specified task as completed or incomplete based on the given parameters.
      * If the provided index is invalid (not in the range of the task list), it displays an error message.
+     * If the task selected is already set as it should, it also displays an error message.
      *
      * @param idx       The 1-based index of the task in the list to update.
      * @param completed A boolean value indicating the desired completion status:
      *                  {@code true} to mark the task as complete, or {@code false} to mark it as incomplete.
      */
     private static void setCompleted(int idx, boolean completed) {
+        // Edge-Case ['idx' out of bounds]
         if (idx > tasks.size() || idx < 1) {
             System.out.println("""
                     \t⚠️ Invalid Task Number!
                     \tHmm, that number doesn’t match any tasks on your list. Double-check your task list with "list", and try again!""");
+            return;
+        }
+
+        // idx is originally 1-indexed [Therefore minus 1 to access 0-indexed ListArray]
+        Task task = tasks.get(idx - 1);
+        if (task.isCompleted() == completed) {
+            // Edge-Case ['task' is already set as complete/incomplete]
+            if (completed) {
+                System.out.println("\t⚠️ Task Already Complete!");
+                System.out.println("\tLooks like task \"" + task.getDescription() + "\" is already marked as done. You’re ahead of the game! \uD83C\uDF89");
+            } else {
+                System.out.println("\t⚠️ Task Already Incomplete!");
+                System.out.println("\tTask \"" + task.getDescription() + "\" is already on your to-do list. No need to unmark it again! \uD83C\uDF1F");
+            }
         } else {
-            // idx is originally 1-indexed [Therefore minus 1 to access 0-indexed ListArray]
-            Task task = tasks.get(idx - 1);
             task.setCompleted(completed);
             if (completed) {
                 System.out.println("\t✅ Task Marked as Complete!");
