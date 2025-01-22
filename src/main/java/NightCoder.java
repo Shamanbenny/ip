@@ -26,14 +26,14 @@ public class NightCoder {
                 \t                \\______/                                                                      \s
                 """;
         System.out.println("\n" + NightCoder.lineBreak + "\n\n" + logo);
-        System.out.println("\t\uD83C\uDF19 Booting Up... ☕\n");
+        System.out.println("\tBooting Up...\n");
         System.out.println("""
-                \tAh, there you are! The moon is bright, the code is flowing, and caffeine—wait, I mean
+                \tAh, there you are! The moon is bright, the code is flowing, and caffeine-wait, I mean
                 \tmotivation—fuels our mission tonight. Welcome back to Night Coder, your loyal (and slightly
-                \tsleep-deprived) coding companion. Whether it’s wrangling deadlines, or organizing your todo
-                \tlist, I’m here to lend a hand.""");
-        System.out.println("\n\tLet’s make some magic together. What’s on the docket tonight? \uD83C\uDF1F");
-        System.out.println("\n\tIf you’re unsure about what I can do, just type \"help\", and I’ll get you sorted in no time!");
+                \tsleep-deprived) coding companion. Whether it's wrangling deadlines, or organizing your todo
+                \tlist, I'm here to lend a hand.""");
+        System.out.println("\n\tLet's make some magic together. What's on the docket tonight?");
+        System.out.println("\n\tIf you're unsure about what I can do, just type \"help\", and I'll get you sorted in no time!");
         System.out.println(NightCoder.lineBreak + "\n");
     }
 
@@ -44,22 +44,21 @@ public class NightCoder {
      */
     private static void printInvalidUsage(String command) {
         System.out.println("""
-                \t⚠️ Oops!
+                \t[ Oops! ]
                 \tIncorrect usage of""" + " \"" + command + "\"" + """
-                . Type "help" to refer to its appropriate usage. Let’s get back on track! 🚀""");
+                . Type "help" to refer to its appropriate usage. Let's get back on track! 🚀""");
     }
 
     private static void printHelp() {
         System.out.println("""
-                \t🌙 Night Code Command Guide ☕️
-                
-                \tNeed a hand? No problem! Here’s what I can do for you:
+                \t[ Night Code Command Guide ]
+                \tNeed a hand? No problem! Here's what I can do for you:
                 
                 \t    help
                 \t    - Prints this handy guide. Because even pros need reminders sometimes.
                 
                 \t    todo <String>
-                \t    - Adds a to-do task to your list. Just tell me what needs doing, and I’ll keep track.
+                \t    - Adds a to-do task to your list. Just tell me what needs doing, and I'll keep track.
                 \t      Example: todo Finish the project report
                 
                 \t    deadline <String> /by <String>
@@ -80,22 +79,22 @@ public class NightCoder {
                 \t    - Marks a task as incomplete. Sometimes things need a second look! Example: unmark 1
                 
                 \t    bye
-                \t    - Exits the program. But don’t be a stranger—I’ll be here when you need me again!
+                \t    - Exits the program. But don't be a stranger—I'll be here when you need me again!
                 
-                \tGot it? Let’s get back to work! 🚀""");
+                \tGot it? Let's get back to work!""");
     }
 
     private static void printExit() {
         System.out.println(NightCoder.lineBreak);
         System.out.println("""
                 
-                \tAlright, signing off for now. Remember, even the brightest coders need some rest—yes, I’m
-                \tlooking at you! \uD83D\uDECC""");
+                \tAlright, signing off for now. Remember, even the brightest coders need some rest—yes, I'm
+                \tlooking at you! ( 0 w 0 )""");
         System.out.println("""
                 \tIf you need me, you know where to find me. Until next time, keep dreaming big, debugging smart,
                 \tand chasing that moonlit inspiration.""");
-        System.out.println("\tGoodnight, and happy coding! \uD83C\uDF0C✨");
-        System.out.println("\n\t\uD83C\uDF19 Powering Down... ☕\uD83D\uDCA4");
+        System.out.println("\tGoodnight, and happy coding!");
+        System.out.println("\n\tPowering Down...");
         System.out.println(NightCoder.lineBreak);
     }
 
@@ -214,16 +213,16 @@ public class NightCoder {
                 break;
             default:
                 System.out.println("""
-                        \t⚠️ Oops!
-                        \tI didn’t catch that. Type "help" to see the list of commands I understand. Let’s get back on track! 🚀""");
+                        \t[ Oops! ]
+                        \tI didn't catch that. Type "help" to see the list of commands I understand. Let's get back on track!""");
         }
 
         System.out.println(NightCoder.lineBreak + "\n");
     }
 
     private static void printTaskAdded(String description) {
-        System.out.println("\t✅ Task #" + tasks.size() + " Added: " + description);
-        System.out.println("\tGot it! I’ll keep this safe in your to-do list. Let me know what’s next! 🌟");
+        System.out.println("\t[ Task #" + tasks.size() + " Added: " + description + " ]");
+        System.out.println("\tGot it! I'll keep this safe in your to-do list. Let me know what's next!");
     }
 
     /**
@@ -271,8 +270,8 @@ public class NightCoder {
      */
     private static void listTasks() {
         if (tasks.isEmpty()) {
-            System.out.println("\t\uD83C\uDF0C Your To-Do List is Empty!");
-            System.out.println("\tLooks like we’re starting with a clean slate. What shall we tackle first? \uD83C\uDF1F");
+            System.out.println("\t[ Your To-Do List is Empty! ]");
+            System.out.println("\tLooks like we're starting with a clean slate. What shall we tackle first?");
         } else {
             for (int idx = 0; idx < tasks.size(); idx++) {
                 Task task = tasks.get(idx);
@@ -295,8 +294,8 @@ public class NightCoder {
         // Edge-Case ['idx' out of bounds]
         if (idx > tasks.size() || idx < 1) {
             System.out.println("""
-                    \t⚠️ Invalid Task Number!
-                    \tHmm, that number doesn’t match any tasks on your list. Double-check your task list with "list", and try again!""");
+                    \t[ Invalid Task Number! ]
+                    \tHmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!""");
             return;
         }
 
@@ -305,20 +304,20 @@ public class NightCoder {
         if (task.isCompleted() == completed) {
             // Edge-Case ['task' is already set as complete/incomplete]
             if (completed) {
-                System.out.println("\t⚠️ Task Already Complete!");
-                System.out.println("\tLooks like task \"" + task.getDescription() + "\" is already marked as done. You’re ahead of the game! \uD83C\uDF89");
+                System.out.println("\t[ Task Already Complete! ]");
+                System.out.println("\tLooks like task \"" + task.getDescription() + "\" is already marked as done. You're ahead of the game!");
             } else {
-                System.out.println("\t⚠️ Task Already Incomplete!");
-                System.out.println("\tTask \"" + task.getDescription() + "\" is already on your to-do list. No need to unmark it again! \uD83C\uDF1F");
+                System.out.println("\t[ Task Already Incomplete ]!");
+                System.out.println("\tTask \"" + task.getDescription() + "\" is already on your to-do list. No need to unmark it again!");
             }
         } else {
             task.setCompleted(completed);
             if (completed) {
-                System.out.println("\t✅ Task Marked as Complete!");
-                System.out.println("\tGreat job! Task \"" + task.getDescription() + "\" is now marked as done. On to the next one! 🎉");
+                System.out.println("\t[ Task Marked as Complete! ]");
+                System.out.println("\tGreat job! Task \"" + task.getDescription() + "\" is now marked as done. On to the next one!");
             } else {
-                System.out.println("\t🔄 Task Marked as Incomplete!");
-                System.out.println("\tGot it! Task \"" + task.getDescription() + "\" is back on your to-do list. Let’s tackle it when you’re ready! 🌟");
+                System.out.println("\t[ Task Marked as Incomplete! ]");
+                System.out.println("\tGot it! Task \"" + task.getDescription() + "\" is back on your to-do list. Let's tackle it when you're ready!");
             }
         }
     }
