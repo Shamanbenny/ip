@@ -85,6 +85,12 @@
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
+	[ Invalid Usage! ]
+	Hmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+	Example: mark 1
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
 	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
@@ -92,6 +98,12 @@
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
 	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Usage! ]
+	Hmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+	Example: unmark 1
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________

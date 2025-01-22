@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * A playful and motivational chatbot assistant for late-night coding sessions.
  *
  * @author ShamanBenny
- * @version 4.5
+ * @version 5.0
  */
 public class NightCoder {
     private static final String lineBreak = "\t______________________________________________________________________________________________";
@@ -118,7 +118,18 @@ public class NightCoder {
 
     /**
      * Parses the user input and executes the corresponding command.
-     * [Contains SIMPLE attempt at detecting invalid command usage]
+     * Commands:
+     * - "help": Displays the list of available commands and their usage.
+     * - "todo": Adds a new ToDo task. Requires a task description.
+     * - "deadline": Adds a new Deadline task. Requires a description and a "/by <time>" argument.
+     * - "event": Adds a new Event task. Requires a description, "/from <start time>", and "/to <end time>" arguments.
+     * - "list": Displays all tasks with their indices and completion status.
+     * - "mark": Marks a task as completed. Requires a valid task index.
+     * - "unmark": Marks a task as incomplete. Requires a valid task index.
+     * Error Handling:
+     * - For "mark" and "unmark", invalid or non-numeric task IDs result in an error message, and the command is ignored.
+     * - For "todo", "deadline", and "event", missing or invalid arguments result in an error message.
+     * - Displays a default error message for unrecognized commands.
      *
      * @param input The full user input string to be parsed and processed.
      */
@@ -200,16 +211,34 @@ public class NightCoder {
                     printInvalidUsage("mark");
                     break;
                 }
-                int markId = Integer.parseInt(parts[1]);
-                setCompleted(markId, true);
+                try {
+                    // Attempt to parse the task ID
+                    int markId = Integer.parseInt(parts[1]);
+                    setCompleted(markId, true);
+                } catch (NumberFormatException e) {
+                    // Handle invalid input for task ID
+                    System.out.println("""
+                            \t[ Invalid Usage! ]
+                            \tHmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+                            \tExample: mark 1""");
+                }
                 break;
             case "unmark":
                 if (parts.length != 2) {
                     printInvalidUsage("unmark");
                     break;
                 }
-                int unmarkId = Integer.parseInt(parts[1]);
-                setCompleted(unmarkId, false);
+                try {
+                    // Attempt to parse the task ID
+                    int unmarkId = Integer.parseInt(parts[1]);
+                    setCompleted(unmarkId, false);
+                } catch (NumberFormatException e) {
+                    // Handle invalid input for task ID
+                    System.out.println("""
+                            \t[ Invalid Usage! ]
+                            \tHmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+                            \tExample: unmark 1""");
+                }
                 break;
             default:
                 System.out.println("""
