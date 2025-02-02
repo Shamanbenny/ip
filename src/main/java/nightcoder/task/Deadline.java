@@ -1,3 +1,5 @@
+package nightcoder.task;
+
 /**
  * Represents a task that has a specific deadline.
  * Extends the base Task class.

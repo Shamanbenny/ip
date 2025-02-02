@@ -1,3 +1,5 @@
+package nightcoder.task;
+
 /**
  * Represents a task that occurs during a specific time range.
  * Extends the base Task class.

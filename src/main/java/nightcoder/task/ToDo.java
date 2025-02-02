@@ -1,3 +1,5 @@
+package nightcoder.task;
+
 /**
  * Represents a task with no specific date or time attached.
  * Extends the base Task class.
@@ -8,7 +10,7 @@
 public class ToDo extends Task {
 
     /**
-     * Constructs a new ToDo task with the specified description.
+     * Constructs a new To Do task with the specified description.
      *
      * @param description A brief description of the task.
      * @param isCompleted The initial completion status of the task (true if completed, false otherwise).
@@ -28,6 +30,6 @@ public class ToDo extends Task {
 
     @Override
     public String toString() {
-        return "[T]" + super.toString(); // Prefix with [T] for ToDo tasks
+        return "[T]" + super.toString(); // Prefix with [T] for To Do tasks
     }
 }
