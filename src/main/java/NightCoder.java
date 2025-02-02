@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * A playful and motivational chatbot assistant for late-night coding sessions.
  *
  * @author ShamanBenny
- * @version 7
+ * @version 8
  */
 public class NightCoder {
     private static final String DATA_FOLDER = "data";

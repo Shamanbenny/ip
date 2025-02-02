@@ -3,7 +3,7 @@
  * Extends the base Task class.
  *
  * @author ShamanBenny
- * @version 7
+ * @version 8
  */
 public class Deadline extends Task {
     private final String dueBy;

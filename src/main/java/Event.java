@@ -3,7 +3,7 @@
  * Extends the base Task class.
  *
  * @author ShamanBenny
- * @version 7
+ * @version 8
  */
 public class Event extends Task {
     private final String startTime;
