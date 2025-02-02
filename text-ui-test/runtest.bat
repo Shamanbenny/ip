@@ -49,4 +49,12 @@ IF ERRORLEVEL 1 (
     echo ********** TEST 2 PASSED **********
 )
 
+REM Ensure the final data/tasks.txt matches EXPECTED2_tasks.TXT
+FC data\tasks.txt EXPECTED2_TASKS.TXT
+IF ERRORLEVEL 1 (
+    echo ********** TEST 2 FINAL TASKS CHECK FAILED **********
+) ELSE (
+    echo ********** TEST 2 FINAL TASKS CHECK PASSED **********
+)
+
 echo ********** TESTING COMPLETE **********

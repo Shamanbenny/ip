@@ -1,0 +1,8 @@
+T|0|Go jogging
+T|1|Go fishing
+D|1|Submit interview application|1 Feb
+E|0|My birthday party|3 Feb 3pm|5pm
+E|1|New Year's Celebration|1 Jan 12pm|3pm
+T|0|Test NightCoder's features
+E|0|Teams meeting|3pm|4pm
+E|0|Homework|6pm|9pm
