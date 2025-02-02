@@ -1,3 +1,10 @@
+package nightcoder;
+
+import nightcoder.parser.Parser;
+import nightcoder.storage.Storage;
+import nightcoder.task.TaskList;
+import nightcoder.ui.Ui;
+
 import java.util.Scanner;
 
 /**

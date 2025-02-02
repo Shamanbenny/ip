@@ -8,7 +8,7 @@ if exist ACTUAL1.TXT del ACTUAL1.TXT
 if exist ACTUAL2.TXT del ACTUAL2.TXT
 
 REM compile the code into the bin folder
-javac -cp ..\src\main\java -Xlint:none -d ..\bin ..\src\main\java\*.java
+javac -cp ..\src\main\java -Xlint:none -d ..\bin ..\src\main\java\nightcoder\NightCoder.java
 IF ERRORLEVEL 1 (
     echo ********** BUILD FAILURE **********
     exit /b 1
@@ -18,7 +18,7 @@ REM no error here, errorlevel == 0
 REM Run first test case (input1.txt) without tasks.txt
 if exist data\tasks.txt del data\tasks.txt
 
-java -classpath ..\bin NightCoder < input1.txt > ACTUAL1.TXT
+java -classpath ..\bin nightcoder.NightCoder < input1.txt > ACTUAL1.TXT
 
 REM compare output to expected output
 FC ACTUAL1.TXT EXPECTED1.TXT
@@ -39,7 +39,7 @@ REM Prepare tasks.txt for second test case (input2.txt)
 ) > data\tasks.txt
 
 REM Run second test case (input2.txt)
-java -classpath ..\bin NightCoder < input2.txt > ACTUAL2.TXT
+java -classpath ..\bin nightcoder.NightCoder < input2.txt > ACTUAL2.TXT
 
 REM compare output to expected output
 FC ACTUAL2.TXT EXPECTED2.TXT

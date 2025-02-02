@@ -1,3 +1,8 @@
+package nightcoder.task;
+
+import nightcoder.storage.Storage;
+import nightcoder.ui.Ui;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -59,7 +64,7 @@ public class TaskList {
     }
 
     /**
-     * Loads tasks from the storage file and converts them into {@code ArrayList<Task>}.
+     * Loads tasks from the storage file and converts them into {@code ArrayList<nightcoder.task.Task>}.
      */
     public void loadTasks() {
         this.tasks = this.STORAGE.loadTasks();
@@ -122,7 +127,7 @@ public class TaskList {
     }
 
     /**
-     * Adds a Deadline to the list of tasks. By default, a newly added deadline is not completed.
+     * Adds an Event to the list of tasks. By default, a newly added event is not completed.
      * Requires information on start and end time.
      *
      * @param description The description of the task to be added to the list.

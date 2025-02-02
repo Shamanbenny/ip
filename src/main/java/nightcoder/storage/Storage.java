@@ -1,3 +1,11 @@
+package nightcoder.storage;
+
+import nightcoder.task.Deadline;
+import nightcoder.task.Event;
+import nightcoder.task.Task;
+import nightcoder.task.ToDo;
+import nightcoder.ui.Ui;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -21,7 +29,7 @@ public class Storage {
     private final String TASKS_FILE;
 
     /**
-     * Constructs a {@code Storage} instance for managing tasks in the specified folder and file.
+     * Constructs a {@code nightcoder.storage.Storage} instance for managing tasks in the specified folder and file.
      *
      * @param folder   The directory where task data is stored.
      * @param filename The name of the file containing task data.
@@ -58,9 +66,9 @@ public class Storage {
     }
 
     /**
-     * Loads tasks from the file and converts them into {@code Task} objects.
+     * Loads tasks from the file and converts them into {@code nightcoder.task.Task} objects.
      *
-     * @return An {@code ArrayList} of {@code Task} objects representing previously saved tasks.
+     * @return An {@code ArrayList} of {@code nightcoder.task.Task} objects representing previously saved tasks.
      */
     public ArrayList<Task> loadTasks() {
         ArrayList<String> lines = this.readLines();
@@ -82,10 +90,10 @@ public class Storage {
     }
 
     /**
-     * Parses a task entry from a formatted string and creates a {@code Task} object.
+     * Parses a task entry from a formatted string and creates a {@code nightcoder.task.Task} object.
      *
      * @param line The string containing task details in the format: Type|Completed|Description|[Additional Data].
-     * @return A {@code Task} object parsed from the string.
+     * @return A {@code nightcoder.task.Task} object parsed from the string.
      * @throws IllegalArgumentException If the format is invalid or missing required fields.
      */
     public Task parseStringToTask(String line) throws IllegalArgumentException {

@@ -1,7 +1,9 @@
+package nightcoder.ui;
+
 import java.io.IOException;
 
 /**
- * The {@code Ui} class is responsible for handling all user interface interactions
+ * The {@code nightcoder.ui.Ui} class is responsible for handling all user interface interactions
  * within the NightCoder application. It provides methods to display messages,
  * errors, and guides to the user in a structured and readable format.
  * The class is designed as a utility class, hence it cannot be instantiated.
@@ -72,12 +74,12 @@ public class Ui {
     }
 
     /**
-     * Private constructor to prevent instantiation of the {@code Ui} class.
+     * Private constructor to prevent instantiation of the {@code nightcoder.ui.Ui} class.
      *
      * @throws UnsupportedOperationException If an attempt is made to instantiate this class.
      */
     private Ui() {
-        throw new UnsupportedOperationException("Ui class should not be instantiated.");
+        throw new UnsupportedOperationException("nightcoder.ui.Ui class should not be instantiated.");
     }
 
     public static void printIndentedLine(String line) {

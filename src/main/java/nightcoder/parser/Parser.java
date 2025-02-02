@@ -1,3 +1,10 @@
+package nightcoder.parser;
+
+import nightcoder.storage.Storage;
+import nightcoder.task.Task;
+import nightcoder.task.TaskList;
+import nightcoder.ui.Ui;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,11 +20,11 @@ public class Parser {
     private final TaskList TASKS;
 
     /**
-     * Constructs a {@code Parser} with the necessary dependencies.
+     * Constructs a {@code nightcoder.parser.Parser} with the necessary dependencies.
      *
      * @param scanner The {@code Scanner} instance to read user input.
-     * @param storage The {@code Storage} instance to handle task persistence.
-     * @param tasks   The {@code TaskList} containing the list of tasks.
+     * @param storage The {@code nightcoder.storage.Storage} instance to handle task persistence.
+     * @param tasks   The {@code nightcoder.task.TaskList} containing the list of tasks.
      */
     public Parser(Scanner scanner, Storage storage, TaskList tasks) {
         this.SCANNER = scanner;
