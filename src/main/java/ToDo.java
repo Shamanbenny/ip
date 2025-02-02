@@ -3,7 +3,7 @@
  * Extends the base Task class.
  *
  * @author ShamanBenny
- * @version 6.5
+ * @version 7
  */
 public class ToDo extends Task {
 

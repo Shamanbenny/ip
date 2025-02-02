@@ -1,0 +1,720 @@
+
+	______________________________________________________________________________________________
+
+	  /$$   /$$ /$$           /$$         /$$      /$$$$$$                  /$$                    
+	 | $$$ | $$|__/          | $$        | $$     /$$__  $$                | $$                    
+	 | $$$$| $$ /$$  /$$$$$$ | $$$$$$$  /$$$$$$  | $$  \__/  /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$ 
+	 | $$ $$ $$| $$ /$$__  $$| $$__  $$|_  $$_/  | $$       /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$
+	 | $$  $$$$| $$| $$  \ $$| $$  \ $$  | $$    | $$      | $$  \ $$| $$  | $$| $$$$$$$$| $$  \__/
+	 | $$\  $$$| $$| $$  | $$| $$  | $$  | $$ /$$| $$    $$| $$  | $$| $$  | $$| $$_____/| $$      
+	 | $$ \  $$| $$|  $$$$$$$| $$  | $$  |  $$$$/|  $$$$$$/|  $$$$$$/|  $$$$$$$|  $$$$$$$| $$      
+	 |__/  \__/|__/ \____  $$|__/  |__/   \___/   \______/  \______/  \_______/ \_______/|__/     
+	                /$$  \ $$                                                                      
+	               |  $$$$$$/                                                                      
+	                \______/                                                                       
+
+	Booting Up...
+
+	Ah, there you are! The moon is bright, the code is flowing, and caffeine-wait, I mean
+	motivation-fuels our mission tonight. Welcome back to Night Coder, your loyal (and slightly
+	sleep-deprived) coding companion. Whether it's wrangling deadlines, or organizing your todo
+	list, I'm here to lend a hand.
+
+	Let's make some magic together. What's on the docket tonight?
+
+	If you're unsure about what I can do, just type "help", and I'll get you sorted in no time!
+	______________________________________________________________________________________________
+
+	[ INFO ] Tasks loaded successfully from previous sessions!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	I didn't catch that. Type "help" to see the list of commands I understand.
+	Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	I didn't catch that. Type "help" to see the list of commands I understand.
+	Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Night Code Command Guide ]
+	Need a hand? No problem! Here's what I can do for you:
+
+	    help
+	    - Prints this handy guide. Because even pros need reminders sometimes.
+
+	    todo <String>
+	    - Adds a to-do task to your list. Just tell me what needs doing, and I'll keep track.
+	      Example: todo Finish the project report
+
+	    deadline <String> /by <String>
+	    - Adds a task with a deadline. Perfect for those time-sensitive missions!
+	      Example: deadline Submit assignment /by 2025-01-30 23:59
+
+	    event <String> /from <String> /to <String>
+	    - Adds an event with a start and end time. Keep your schedule sharp!
+	      Example: event Team meeting /from 2025-01-21 3:00 PM /to 2025-01-21 4:00 PM
+
+	    list
+	    - Shows all your tasks. Think of it as your personal task constellation.
+
+	    mark <int>
+	    - Marks a task as complete. Use the task number from the list.
+	      Example: mark 1
+
+	    unmark <int>
+	    - Marks a task as incomplete. Sometimes things need a second look!
+	      tExample: unmark 1
+
+	    delete <int>
+	    - Deletes a task from your to-do list. Use the task number from the list.
+	      Example: delete 2
+
+	    bye
+	    - Exits the program. But don't be a stranger-I'll be here when you need me again!
+
+	Got it? Let's get back to work!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Usage! ]
+	Hmm, please enter a number that matches one of your tasks on the list.
+	Double-check your task list with "list", and try again!
+	Example: mark 1
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Usage! ]
+	Hmm, please enter a number that matches one of your tasks on the list.
+	Double-check your task list with "list", and try again!
+	Example: unmark 1
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Usage! ]
+	Hmm, please enter a number that matches one of your tasks on the list.
+	Double-check your task list with "list", and try again!
+	Example: delete 1
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Complete! ]
+	Great job! Task "Go jogging" is now marked as done. On to the next one!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Complete! ]
+	Looks like task "Go fishing" is already marked as done. You're ahead of the game!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][X] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Incomplete ]!
+	Task "Homework" is already on your to-do list. No need to unmark it again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Incomplete! ]
+	Got it! Task "Submit interview application" is back on your to-do list. Let's tackle it when you're ready!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][X] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][ ] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Incomplete! ]
+	Got it! Task "Go jogging" is back on your to-do list. Let's tackle it when you're ready!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Complete! ]
+	Great job! Task "Submit interview application" is now marked as done. On to the next one!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "todo". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task #7 Added: Test NightCoder's features ]
+	Got it! I'll keep this safe in your to-do list. Let me know what's next!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Complete! ]
+	Great job! Task "Test NightCoder's features" is now marked as done. On to the next one!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][X] Test NightCoder's features
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Complete! ]
+	Looks like task "Test NightCoder's features" is already marked as done. You're ahead of the game!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][X] Test NightCoder's features
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Incomplete! ]
+	Got it! Task "Test NightCoder's features" is back on your to-do list. Let's tackle it when you're ready!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Incomplete ]!
+	Task "Test NightCoder's features" is already on your to-do list. No need to unmark it again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "deadline". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "deadline". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "deadline". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "deadline". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task #8 Added: Running ]
+	Got it! I'll keep this safe in your to-do list. Let me know what's next!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Complete! ]
+	Great job! Task "Running" is now marked as done. On to the next one!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][X] Running (By: Tonight)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Complete! ]
+	Looks like task "Running" is already marked as done. You're ahead of the game!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][X] Running (By: Tonight)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Incomplete! ]
+	Got it! Task "Running" is back on your to-do list. Let's tackle it when you're ready!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Incomplete ]!
+	Task "Running" is already on your to-do list. No need to unmark it again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task #9 Added: Teams meeting ]
+	Got it! I'll keep this safe in your to-do list. Let me know what's next!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task #10 Added: Homework ]
+	Got it! I'll keep this safe in your to-do list. Let me know what's next!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Complete! ]
+	Great job! Task "Teams meeting" is now marked as done. On to the next one!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Complete! ]
+	Great job! Task "Homework" is now marked as done. On to the next one!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	9.[E][X] Teams meeting (From: 3pm, To: 4pm)
+	10.[E][X] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Complete! ]
+	Looks like task "Teams meeting" is already marked as done. You're ahead of the game!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Complete! ]
+	Looks like task "Homework" is already marked as done. You're ahead of the game!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	9.[E][X] Teams meeting (From: 3pm, To: 4pm)
+	10.[E][X] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Incomplete! ]
+	Got it! Task "Teams meeting" is back on your to-do list. Let's tackle it when you're ready!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Marked as Incomplete! ]
+	Got it! Task "Homework" is back on your to-do list. Let's tackle it when you're ready!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Incomplete ]!
+	Task "Teams meeting" is already on your to-do list. No need to unmark it again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Already Incomplete ]!
+	Task "Homework" is already on your to-do list. No need to unmark it again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: Tonight)
+	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Deleted! ]
+	Task "Homework" has been removed from your list. Poof, it's gone! Let me know if there's anything else to tidy up.
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task Deleted! ]
+	Task "Running" has been removed from your list. Poof, it's gone! Let me know if there's anything else to tidy up.
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][X] Submit interview application (By: 1 Feb)
+	4.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	5.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	6.[T][ ] Test NightCoder's features
+	7.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	8.[E][ ] Homework (From: 6pm, To: 9pm)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Night Code Command Guide ]
+	Need a hand? No problem! Here's what I can do for you:
+
+	    help
+	    - Prints this handy guide. Because even pros need reminders sometimes.
+
+	    todo <String>
+	    - Adds a to-do task to your list. Just tell me what needs doing, and I'll keep track.
+	      Example: todo Finish the project report
+
+	    deadline <String> /by <String>
+	    - Adds a task with a deadline. Perfect for those time-sensitive missions!
+	      Example: deadline Submit assignment /by 2025-01-30 23:59
+
+	    event <String> /from <String> /to <String>
+	    - Adds an event with a start and end time. Keep your schedule sharp!
+	      Example: event Team meeting /from 2025-01-21 3:00 PM /to 2025-01-21 4:00 PM
+
+	    list
+	    - Shows all your tasks. Think of it as your personal task constellation.
+
+	    mark <int>
+	    - Marks a task as complete. Use the task number from the list.
+	      Example: mark 1
+
+	    unmark <int>
+	    - Marks a task as incomplete. Sometimes things need a second look!
+	      tExample: unmark 1
+
+	    delete <int>
+	    - Deletes a task from your to-do list. Use the task number from the list.
+	      Example: delete 2
+
+	    bye
+	    - Exits the program. But don't be a stranger-I'll be here when you need me again!
+
+	Got it? Let's get back to work!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+
+	Alright, signing off for now. Remember, even the brightest coders need some rest-yes, I'm
+	looking at you! ( 0 w 0 )
+	If you need me, you know where to find me. Until next time, keep dreaming big, debugging smart,
+	and chasing that moonlit inspiration.
+	Goodnight, and happy coding!
+
+	Powering Down...
+	______________________________________________________________________________________________

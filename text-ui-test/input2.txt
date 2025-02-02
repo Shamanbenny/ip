@@ -1,0 +1,88 @@
+awdasd
+hesdha
+help
+list
+mark 7
+mark -1
+mark abc
+unmark 7
+unmark -1
+unmark abc
+delete 7
+delete -1
+delete abc
+list
+mark 1
+mark 2
+list
+unmark 3
+unmark 4
+list
+unmark 1
+mark 4
+todo
+list
+todo Test NightCoder's features
+list
+mark 7
+list
+mark 7
+list
+unmark 7
+list
+unmark 7
+list
+deadline
+deadline Running
+deadline Running /by
+deadline /by Tonight
+list
+deadline Running /by Tonight
+list
+mark 8
+list
+mark 8
+list
+unmark 8
+list
+unmark 8
+list
+event
+event Teams meeting
+event Teams meeting /from
+event Teams meeting /from 3pm
+event Teams meeting /to
+event Teams meeting /to 4pm
+event Teams meeting /from 3pm /to
+event Teams meeting /to 4pm /from
+event /from 3pm /to 4pm
+event /to 4pm /from 3pm
+list
+event Teams meeting /from 3pm /to 4pm
+event Homework /to 9pm /from 6pm
+list
+mark 9
+mark 10
+list
+mark 9
+mark 10
+list
+unmark 9
+unmark 10
+list
+unmark 9
+unmark 10
+list
+mark 0
+mark 11
+list
+unmark 0
+unmark 11
+list
+delete 0
+list
+delete 3
+delete 7
+list
+help
+bye

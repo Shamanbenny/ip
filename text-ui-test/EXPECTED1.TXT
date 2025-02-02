@@ -8,7 +8,7 @@
 	 | $$  $$$$| $$| $$  \ $$| $$  \ $$  | $$    | $$      | $$  \ $$| $$  | $$| $$$$$$$$| $$  \__/
 	 | $$\  $$$| $$| $$  | $$| $$  | $$  | $$ /$$| $$    $$| $$  | $$| $$  | $$| $$_____/| $$      
 	 | $$ \  $$| $$|  $$$$$$$| $$  | $$  |  $$$$/|  $$$$$$/|  $$$$$$/|  $$$$$$$|  $$$$$$$| $$      
-	 |__/  \__/|__/ \____  $$|__/  |__/   \___/   \______/  \______/  \_______/ \_______/|__/      
+	 |__/  \__/|__/ \____  $$|__/  |__/   \___/   \______/  \______/  \_______/ \_______/|__/     
 	                /$$  \ $$                                                                      
 	               |  $$$$$$/                                                                      
 	                \______/                                                                       
@@ -25,14 +25,19 @@
 	If you're unsure about what I can do, just type "help", and I'll get you sorted in no time!
 	______________________________________________________________________________________________
 
-	______________________________________________________________________________________________
-	[ Oops! ]
-	I didn't catch that. Type "help" to see the list of commands I understand. Let's get back on track!
+	[ INFO ] No previous task data found. Starting fresh!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Oops! ]
-	I didn't catch that. Type "help" to see the list of commands I understand. Let's get back on track!
+	I didn't catch that. Type "help" to see the list of commands I understand.
+	Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	I didn't catch that. Type "help" to see the list of commands I understand.
+	Let's get back on track!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -82,49 +87,58 @@
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Usage! ]
-	Hmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+	Hmm, please enter a number that matches one of your tasks on the list.
+	Double-check your task list with "list", and try again!
 	Example: mark 1
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Usage! ]
-	Hmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+	Hmm, please enter a number that matches one of your tasks on the list.
+	Double-check your task list with "list", and try again!
 	Example: unmark 1
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Usage! ]
-	Hmm, please enter a number that matches one of your tasks on the list. Double-check your task list with "list", and try again!
+	Hmm, please enter a number that matches one of your tasks on the list.
+	Double-check your task list with "list", and try again!
 	Example: delete 1
 	______________________________________________________________________________________________
 
@@ -399,12 +413,14 @@
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -416,12 +432,14 @@
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -433,7 +451,8 @@
 
 	______________________________________________________________________________________________
 	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list. Double-check your task list with "list", and try again!
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
