@@ -160,6 +160,10 @@ public class TaskList {
         }
     }
 
+    /**
+     * Saves the current list of tasks to the designated storage file.
+     * This method should be called at the end of the application to ensure that all tasks are properly backed up.
+     */
     public void saveTasks() {
         ArrayList<String> lines = new ArrayList<>();
         for (Task task : this.tasks) {
