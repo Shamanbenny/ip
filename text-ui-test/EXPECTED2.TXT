@@ -12,16 +12,15 @@
 	                /$$  \ $$                                                                      
 	               |  $$$$$$/                                                                      
 	                \______/                                                                       
-
 	Booting Up...
 
 	Ah, there you are! The moon is bright, the code is flowing, and caffeine-wait, I mean
 	motivation-fuels our mission tonight. Welcome back to Night Coder, your loyal (and slightly
 	sleep-deprived) coding companion. Whether it's wrangling deadlines, or organizing your todo
 	list, I'm here to lend a hand.
-
+ 
 	Let's make some magic together. What's on the docket tonight?
-
+ 
 	If you're unsure about what I can do, just type "help", and I'll get you sorted in no time!
 	______________________________________________________________________________________________
 
@@ -755,6 +754,6 @@
 	If you need me, you know where to find me. Until next time, keep dreaming big, debugging smart,
 	and chasing that moonlit inspiration.
 	Goodnight, and happy coding!
-
+ 
 	Powering Down...
 	______________________________________________________________________________________________

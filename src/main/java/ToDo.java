@@ -3,7 +3,7 @@
  * Extends the base Task class.
  *
  * @author ShamanBenny
- * @version 8
+ * @version 8.1
  */
 public class ToDo extends Task {
 
@@ -15,6 +15,15 @@ public class ToDo extends Task {
      */
     public ToDo(String description, boolean isCompleted) {
         super(description, isCompleted);
+    }
+
+    /**
+     * Returns a formatted string representation of the task.
+     *
+     * @return A string formatted as "T|completion_status|description".
+     */
+    public String getStringFormat() {
+        return "T|" + (isCompleted() ? "1" : "0") + "|" + getDescription();
     }
 
     @Override

@@ -3,7 +3,7 @@
  * Extends the base Task class.
  *
  * @author ShamanBenny
- * @version 8
+ * @version 8.1
  */
 public class Event extends Task {
     private final String startTime;
@@ -29,6 +29,15 @@ public class Event extends Task {
 
     public String getEndTime() {
         return this.endTime;
+    }
+
+    /**
+     * Returns a formatted string representation of the task.
+     *
+     * @return A string formatted as "T|completion_status|description|start_time|end_time".
+     */
+    public String getStringFormat() {
+        return "E|" + (isCompleted() ? "1" : "0") + "|" + getDescription() + "|" + getStartTime() + "|" + getEndTime();
     }
 
     @Override
