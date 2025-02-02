@@ -37,15 +37,20 @@ deadline Running
 deadline Running /by
 deadline /by Tonight
 list
-deadline Running /by Tonight
+deadline Running /by 2025-02-01 20:30:00
+deadline Jogging /by 2025-02-03
 list
 mark 8
+mark 9
 list
 mark 8
+mark 9
 list
 unmark 8
+unmark 9
 list
 unmark 8
+unmark 9
 list
 event
 event Teams meeting
@@ -59,25 +64,25 @@ event /from 3pm /to 4pm
 event /to 4pm /from 3pm
 list
 event Teams meeting /from 3pm /to 4pm
-event Homework /to 9pm /from 6pm
+event Vacation /to 2025-03-02 /from 2025-03-01
 list
-mark 9
 mark 10
-list
-mark 9
-mark 10
-list
-unmark 9
-unmark 10
-list
-unmark 9
-unmark 10
-list
-mark 0
 mark 11
 list
-unmark 0
+mark 10
+mark 11
+list
+unmark 10
 unmark 11
+list
+unmark 10
+unmark 11
+list
+mark 0
+mark 12
+list
+unmark 0
+unmark 12
 list
 delete 0
 list

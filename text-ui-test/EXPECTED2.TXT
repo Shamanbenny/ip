@@ -328,6 +328,11 @@
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
+	[ Task #9 Added: Jogging ]
+	Got it! I'll keep this safe in your to-do list. Let me know what's next!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
 	1.[T][ ] Go jogging
 	2.[T][X] Go fishing
 	3.[D][ ] Homework (By: Tonight)
@@ -335,7 +340,8 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -344,6 +350,11 @@
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
+	[ Task Marked as Complete! ]
+	Great job! Task "Jogging" is now marked as done. On to the next one!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
 	1.[T][ ] Go jogging
 	2.[T][X] Go fishing
 	3.[D][ ] Homework (By: Tonight)
@@ -351,7 +362,8 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][X] Running (By: Tonight)
+	8.[D][X] Running (By: 2025-02-01 20:30:00)
+	9.[D][X] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -360,6 +372,11 @@
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
+	[ Task Already Complete! ]
+	Looks like task "Jogging" is already marked as done. You're ahead of the game!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
 	1.[T][ ] Go jogging
 	2.[T][X] Go fishing
 	3.[D][ ] Homework (By: Tonight)
@@ -367,7 +384,8 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][X] Running (By: Tonight)
+	8.[D][X] Running (By: 2025-02-01 20:30:00)
+	9.[D][X] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -376,6 +394,11 @@
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
+	[ Task Marked as Incomplete! ]
+	Got it! Task "Jogging" is back on your to-do list. Let's tackle it when you're ready!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
 	1.[T][ ] Go jogging
 	2.[T][X] Go fishing
 	3.[D][ ] Homework (By: Tonight)
@@ -383,7 +406,8 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -392,64 +416,8 @@
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
-	1.[T][ ] Go jogging
-	2.[T][X] Go fishing
-	3.[D][ ] Homework (By: Tonight)
-	4.[D][X] Submit interview application (By: 1 Feb)
-	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
-	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
-	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Oops! ]
-	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	[ Task Already Incomplete ]!
+	Task "Jogging" is already on your to-do list. No need to unmark it again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -460,16 +428,79 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
-	[ Task #9 Added: Teams meeting ]
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Oops! ]
+	Incorrect usage of "event". Type "help" to refer to its appropriate usage. Let's get back on track!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Task #10 Added: Teams meeting ]
 	Got it! I'll keep this safe in your to-do list. Let me know what's next!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
-	[ Task #10 Added: Homework ]
+	[ Task #11 Added: Vacation ]
 	Got it! I'll keep this safe in your to-do list. Let me know what's next!
 	______________________________________________________________________________________________
 
@@ -481,9 +512,10 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
-	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -493,7 +525,7 @@
 
 	______________________________________________________________________________________________
 	[ Task Marked as Complete! ]
-	Great job! Task "Homework" is now marked as done. On to the next one!
+	Great job! Task "Vacation" is now marked as done. On to the next one!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -504,9 +536,10 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	9.[E][X] Teams meeting (From: 3pm, To: 4pm)
-	10.[E][X] Homework (From: 6pm, To: 9pm)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	10.[E][X] Teams meeting (From: 3pm, To: 4pm)
+	11.[E][X] Vacation (From: Mar 01 2025, To: Mar 02 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -516,7 +549,7 @@
 
 	______________________________________________________________________________________________
 	[ Task Already Complete! ]
-	Looks like task "Homework" is already marked as done. You're ahead of the game!
+	Looks like task "Vacation" is already marked as done. You're ahead of the game!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -527,9 +560,10 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	9.[E][X] Teams meeting (From: 3pm, To: 4pm)
-	10.[E][X] Homework (From: 6pm, To: 9pm)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	10.[E][X] Teams meeting (From: 3pm, To: 4pm)
+	11.[E][X] Vacation (From: Mar 01 2025, To: Mar 02 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -539,7 +573,7 @@
 
 	______________________________________________________________________________________________
 	[ Task Marked as Incomplete! ]
-	Got it! Task "Homework" is back on your to-do list. Let's tackle it when you're ready!
+	Got it! Task "Vacation" is back on your to-do list. Let's tackle it when you're ready!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -550,9 +584,10 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
-	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -562,7 +597,7 @@
 
 	______________________________________________________________________________________________
 	[ Task Already Incomplete ]!
-	Task "Homework" is already on your to-do list. No need to unmark it again!
+	Task "Vacation" is already on your to-do list. No need to unmark it again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -573,34 +608,10 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
-	10.[E][ ] Homework (From: 6pm, To: 9pm)
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list.
-	Double-check your task list with "list", and try again!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	[ Invalid Task Number! ]
-	Hmm, that number doesn't match any tasks on your list.
-	Double-check your task list with "list", and try again!
-	______________________________________________________________________________________________
-
-	______________________________________________________________________________________________
-	1.[T][ ] Go jogging
-	2.[T][X] Go fishing
-	3.[D][ ] Homework (By: Tonight)
-	4.[D][X] Submit interview application (By: 1 Feb)
-	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
-	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
-	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
-	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -623,9 +634,16 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
-	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -642,9 +660,30 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
-	9.[E][ ] Teams meeting (From: 3pm, To: 4pm)
-	10.[E][ ] Homework (From: 6pm, To: 9pm)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	[ Invalid Task Number! ]
+	Hmm, that number doesn't match any tasks on your list.
+	Double-check your task list with "list", and try again!
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	2.[T][X] Go fishing
+	3.[D][ ] Homework (By: Tonight)
+	4.[D][X] Submit interview application (By: 1 Feb)
+	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
+	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
+	7.[T][ ] Test NightCoder's features
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
+	9.[D][ ] Jogging (By: Feb 03 2025)
+	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
@@ -664,8 +703,9 @@
 	4.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	5.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	6.[T][ ] Test NightCoder's features
-	7.[E][ ] Teams meeting (From: 3pm, To: 4pm)
-	8.[E][ ] Homework (From: 6pm, To: 9pm)
+	7.[D][ ] Jogging (By: Feb 03 2025)
+	8.[E][ ] Teams meeting (From: 3pm, To: 4pm)
+	9.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
