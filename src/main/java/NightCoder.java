@@ -4,10 +4,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -24,6 +25,8 @@ public class NightCoder {
             "\t______________________________________________________________________________________________";
     private static Scanner SCANNER;
     private static final ArrayList<Task> TASKS = new ArrayList<>();
+    private static final DateTimeFormatter INPUT_DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final DateTimeFormatter OUTPUT_DATE_FORMAT = DateTimeFormatter.ofPattern("MMM dd yyyy");
 
     /**
      * Represents the commands supported by the NightCoder application.
@@ -371,10 +374,12 @@ public class NightCoder {
      * @param dueBy A string detailing when the task is due by.
      */
     private static void addDeadline(String description, String dueBy) {
-        Task task = new Deadline(description, false, dueBy);
+        String parsedDueBy = parseDate(dueBy);
+
+        Task task = new Deadline(description, false, parsedDueBy);
         NightCoder.TASKS.add(task);
         try {
-            addTaskToTasksFile("D|0|" + description + "|" + dueBy);
+            addTaskToTasksFile("D|0|" + description + "|" + parsedDueBy);
             printTaskAdded(description);
         } catch (IOException e) {
             System.out.println("\t[ Task #" + NightCoder.TASKS.size() + " Added: " + description + " ]");
@@ -391,14 +396,35 @@ public class NightCoder {
      * @param endTime A string detailing when the event ends.
      */
     private static void addEvent(String description, String startTime, String endTime) {
-        Task task = new Event(description, false, startTime, endTime);
+        String parsedStartTime = parseDate(startTime);
+        String parsedEndTime = parseDate(endTime);
+
+        Task task = new Event(description, false, parsedStartTime, parsedEndTime);
         NightCoder.TASKS.add(task);
         try {
-            addTaskToTasksFile("E|0|" + description + "|" + startTime + "|" + endTime);
+            addTaskToTasksFile("E|0|" + description + "|" + parsedStartTime + "|" + parsedEndTime);
             printTaskAdded(description);
         } catch (IOException e) {
             System.out.println("\t[ Task #" + NightCoder.TASKS.size() + " Added: " + description + " ]");
             printErrorUpdatingTasksFile(e);
+        }
+    }
+
+    /**
+     * Parses a date string in the format "yyyy-MM-dd" and returns it in ISO format.
+     * If the input cannot be parsed, the original input string is returned unchanged.
+     *
+     * @param input The date string to be parsed, expected in "yyyy-MM-dd" format.
+     * @return A string representation of the parsed date in ISO format, or the original input string if parsing fails.
+     */
+    private static String parseDate(String input) {
+        LocalDate output;
+
+        try {
+            output = LocalDate.parse(input, INPUT_DATE_FORMAT);
+            return output.format(OUTPUT_DATE_FORMAT);
+        } catch (DateTimeParseException e) {
+            return input;
         }
     }
 
