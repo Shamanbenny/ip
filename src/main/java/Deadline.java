@@ -23,6 +23,15 @@ public class Deadline extends Task {
         return this.dueBy;
     }
 
+    /**
+     * Returns a formatted string representation of the task.
+     *
+     * @return A string formatted as "T|completion_status|description|due_by".
+     */
+    public String getStringFormat() {
+        return "D|" + (isCompleted() ? "1" : "0") + "|" + getDescription() + "|" + getDueBy();
+    }
+
     @Override
     public String toString() {
         return "[D]" + super.toString() + " (By: " + this.dueBy + ")";

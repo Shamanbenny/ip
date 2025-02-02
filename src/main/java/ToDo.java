@@ -17,6 +17,15 @@ public class ToDo extends Task {
         super(description, isCompleted);
     }
 
+    /**
+     * Returns a formatted string representation of the task.
+     *
+     * @return A string formatted as "T|completion_status|description".
+     */
+    public String getStringFormat() {
+        return "T|" + (isCompleted() ? "1" : "0") + "|" + getDescription();
+    }
+
     @Override
     public String toString() {
         return "[T]" + super.toString(); // Prefix with [T] for ToDo tasks

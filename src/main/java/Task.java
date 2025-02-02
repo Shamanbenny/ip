@@ -6,7 +6,7 @@
  * @author ShamanBenny
  * @version 8
  */
-public class Task {
+public abstract class Task {
     private final String description;
     private boolean isCompleted;
 
@@ -20,6 +20,8 @@ public class Task {
         this.description = description;
         this.isCompleted = isCompleted;
     }
+
+    public abstract String getStringFormat();
 
     public String getDescription() {
         return this.description;

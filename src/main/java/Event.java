@@ -31,6 +31,15 @@ public class Event extends Task {
         return this.endTime;
     }
 
+    /**
+     * Returns a formatted string representation of the task.
+     *
+     * @return A string formatted as "T|completion_status|description|start_time|end_time".
+     */
+    public String getStringFormat() {
+        return "E|" + (isCompleted() ? "1" : "0") + "|" + getDescription() + "|" + getStartTime() + "|" + getEndTime();
+    }
+
     @Override
     public String toString() {
         return "[E]" + super.toString() + " (From: " + this.startTime + ", To: " + this.endTime + ")";
