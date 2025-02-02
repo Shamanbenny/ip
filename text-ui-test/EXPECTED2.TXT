@@ -340,7 +340,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
@@ -362,7 +362,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][X] Running (By: Tonight)
+	8.[D][X] Running (By: 2025-02-01 20:30:00)
 	9.[D][X] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
@@ -384,7 +384,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][X] Running (By: Tonight)
+	8.[D][X] Running (By: 2025-02-01 20:30:00)
 	9.[D][X] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
@@ -406,7 +406,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
@@ -428,7 +428,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
@@ -490,7 +490,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	______________________________________________________________________________________________
 
@@ -512,7 +512,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
 	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
@@ -536,7 +536,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	10.[E][X] Teams meeting (From: 3pm, To: 4pm)
 	11.[E][X] Vacation (From: Mar 01 2025, To: Mar 02 2025)
@@ -560,7 +560,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	10.[E][X] Teams meeting (From: 3pm, To: 4pm)
 	11.[E][X] Vacation (From: Mar 01 2025, To: Mar 02 2025)
@@ -584,7 +584,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
 	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
@@ -608,7 +608,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
 	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
@@ -634,7 +634,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
 	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
@@ -660,7 +660,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
 	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)
@@ -680,7 +680,7 @@
 	5.[E][ ] My birthday party (From: 3 Feb 3pm, To: 5pm)
 	6.[E][X] New Year's Celebration (From: 1 Jan 12pm, To: 3pm)
 	7.[T][ ] Test NightCoder's features
-	8.[D][ ] Running (By: Tonight)
+	8.[D][ ] Running (By: 2025-02-01 20:30:00)
 	9.[D][ ] Jogging (By: Feb 03 2025)
 	10.[E][ ] Teams meeting (From: 3pm, To: 4pm)
 	11.[E][ ] Vacation (From: Mar 01 2025, To: Mar 02 2025)

@@ -28,7 +28,7 @@ deadline Running
 deadline Running /by
 deadline /by Tonight
 list
-deadline Running /by Tonight
+deadline Running /by 2025-02-01 20:30:00
 deadline Jogging /by 2025-02-03
 list
 mark 2
