@@ -42,10 +42,12 @@ public class Ui {
                 "end time. Keep your schedule sharp!\n\t      Example: event Team meeting /from 2025-01-21 3:00 PM " +
                 "/to 2025-01-21 4:00 PM"),
         LIST("list", "Shows all your tasks. Think of it as your personal task constellation."),
+        FIND("find <String>", "Find specific keyword amongst your list of tasks. I'll do the work of finding " +
+                "it for you!\n\t      Example: find homework"),
         MARK("mark <int>", "Marks a task as complete. Use the task number from the list.\n" +
                 "\t      Example: mark 1"),
         UNMARK("unmark <int>", "Marks a task as incomplete. Sometimes things need a second look!\n" +
-                "\t      tExample: unmark 1"),
+                "\t      Example: unmark 1"),
         DELETE("delete <int>", "Deletes a task from your to-do list. Use the task number from " +
                 "the list.\n\t      Example: delete 2"),
         BYE("bye", "Exits the program. But don't be a stranger-I'll be here when you need me again!");

@@ -166,6 +166,30 @@ public class TaskList {
     }
 
     /**
+     * Displays the list of tasks currently stored along with their indices containing the specific keyword.
+     * If the list is empty, a message indicating no tasks are available is shown.
+     */
+    public void listTasks(String keyword) {
+        if (this.tasks.isEmpty()) {
+            Ui.printIndentedLine("[ Your To-Do List is Empty! ]");
+            Ui.printIndentedLine("Looks like we're starting with a clean slate. What shall we tackle first?");
+        } else {
+            boolean isFound = false;
+            for (int idx = 0; idx < this.size(); idx++) {
+                Task task = this.tasks.get(idx);
+                if (task.getDescription().toLowerCase().contains(keyword.toLowerCase())) {
+                    Ui.printIndentedLine((idx+1) + "." + task);
+                    isFound = true;
+                }
+            }
+            if (!isFound) {
+                Ui.printIndentedLine("[ No match found! ]");
+                Ui.printIndentedLine("Looks like the tasks you're trying to find doesn't exist. Anything else?");
+            }
+        }
+    }
+
+    /**
      * Saves the current list of tasks to the designated storage file.
      * This method should be called at the end of the application to ensure that all tasks are properly backed up.
      */
