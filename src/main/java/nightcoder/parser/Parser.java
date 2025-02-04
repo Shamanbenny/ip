@@ -170,6 +170,14 @@ public class Parser {
                 Ui.printInvalidNumberInput("delete");
             }
             break;
+        case "find":
+            if (parts.length != 2) {
+                Ui.printInvalidUsage("find");
+                break;
+            }
+            String findParams = parts[1];
+            this.TASKS.listTasks(findParams);
+            break;
         default:
             System.out.println("""
                     \t[ Oops! ]

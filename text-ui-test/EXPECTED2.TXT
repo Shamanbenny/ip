@@ -61,13 +61,17 @@
 	    list
 	    - Shows all your tasks. Think of it as your personal task constellation.
 
+	    find <String>
+	    - Find specific keyword amongst your list of tasks. I'll do the work of finding it for you!
+	      Example: find homework
+
 	    mark <int>
 	    - Marks a task as complete. Use the task number from the list.
 	      Example: mark 1
 
 	    unmark <int>
 	    - Marks a task as incomplete. Sometimes things need a second look!
-	      tExample: unmark 1
+	      Example: unmark 1
 
 	    delete <int>
 	    - Deletes a task from your to-do list. Use the task number from the list.
@@ -708,6 +712,20 @@
 	______________________________________________________________________________________________
 
 	______________________________________________________________________________________________
+	[ No match found! ]
+	Looks like the tasks you're trying to find doesn't exist. Anything else?
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
+	1.[T][ ] Go jogging
+	7.[D][ ] Jogging (By: Feb 03 2025)
+	______________________________________________________________________________________________
+
+	______________________________________________________________________________________________
 	[ Night Code Command Guide ]
 	Need a hand? No problem! Here's what I can do for you:
 
@@ -729,13 +747,17 @@
 	    list
 	    - Shows all your tasks. Think of it as your personal task constellation.
 
+	    find <String>
+	    - Find specific keyword amongst your list of tasks. I'll do the work of finding it for you!
+	      Example: find homework
+
 	    mark <int>
 	    - Marks a task as complete. Use the task number from the list.
 	      Example: mark 1
 
 	    unmark <int>
 	    - Marks a task as incomplete. Sometimes things need a second look!
-	      tExample: unmark 1
+	      Example: unmark 1
 
 	    delete <int>
 	    - Deletes a task from your to-do list. Use the task number from the list.

@@ -89,5 +89,8 @@ list
 delete 3
 delete 7
 list
+find hockey
+find go jog
+find jog
 help
 bye
