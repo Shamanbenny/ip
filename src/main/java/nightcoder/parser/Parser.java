@@ -1,12 +1,12 @@
 package nightcoder.parser;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 import nightcoder.storage.Storage;
 import nightcoder.task.Task;
 import nightcoder.task.TaskList;
 import nightcoder.ui.Ui;
-
-import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * Handles user input, processes commands, and manages task-related operations.
