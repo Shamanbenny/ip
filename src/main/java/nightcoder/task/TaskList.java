@@ -93,7 +93,7 @@ public class TaskList {
      *
      * @param description The description of the task to be added to the list.
      */
-    public  void addToDo(String description) {
+    public void addToDo(String description) {
         Task task = new ToDo(description, false);
         this.tasks.add(task);
         try {
