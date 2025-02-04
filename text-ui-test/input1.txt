@@ -1,6 +1,7 @@
 awdasd
 hesdha
 help
+find homework
 list
 mark 1
 mark -1
@@ -79,5 +80,7 @@ delete 0
 list
 delete 3
 list
+find hockey
+find teams
 help
 bye
