@@ -21,8 +21,7 @@ public class NightCoder {
     private static final TaskList TASKS = new TaskList(NightCoder.STORAGE);
 
     /**
-     * The main entry point of the program. Initializes the application, loads tasks from storage,
-     * and starts the user input loop until termination.
+     * Initializes the application, loads tasks from storage, and starts the user input loop until termination.
      *
      * @param args Command-line arguments (not used in this application).
      */

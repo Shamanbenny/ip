@@ -3,9 +3,9 @@ package nightcoder.ui;
 import java.io.IOException;
 
 /**
- * The {@code nightcoder.ui.Ui} class is responsible for handling all user interface interactions
- * within the NightCoder application. It provides methods to display messages,
- * errors, and guides to the user in a structured and readable format.
+ * Handles all user interface interactions within the NightCoder application.
+ * It provides methods to display messages, errors, and guides to the user in a
+ * structured and readable format.
  * The class is designed as a utility class, hence it cannot be instantiated.
  *
  * @author ShamanBenny
@@ -29,8 +29,7 @@ public class Ui {
 
     /**
      * Represents the commands supported by the NightCoder application.
-     * Each command is associated with a syntax and a description to provide
-     * help and guidance for users.
+     * Each command is associated with a syntax and a description to provide help and guidance for users.
      */
     private enum CommandHelp {
         HELP("help", "Prints this handy guide. Because even pros need reminders sometimes."),
@@ -74,7 +73,7 @@ public class Ui {
     }
 
     /**
-     * Private constructor to prevent instantiation of the {@code nightcoder.ui.Ui} class.
+     * Prevents the instantiation of the {@code Ui} class.
      *
      * @throws UnsupportedOperationException If an attempt is made to instantiate this class.
      */

@@ -1,8 +1,8 @@
 package nightcoder.task;
 
 /**
- * This class encapsulates a task's details, including its description and
- * whether it has been completed, providing methods to manage and retrieve
+ * Represents a task's details, including its description and whether
+ * it has been completed, providing methods to manage and retrieve
  * task information.
  *
  * @author ShamanBenny
