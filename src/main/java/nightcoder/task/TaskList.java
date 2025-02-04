@@ -10,7 +10,7 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
 /**
- * The TaskList class manages a collection of tasks, including To-Do tasks, Deadlines, and Events.
+ * Represents the TaskList class that manages a collection of tasks, including To-Do tasks, Deadlines, and Events.
  * It supports adding, listing, and formatting tasks with associated dates.
  * The class interacts with storage object and UI class to persist and display tasks respectively.
  *
@@ -64,7 +64,7 @@ public class TaskList {
     }
 
     /**
-     * Loads tasks from the storage file and converts them into {@code ArrayList<nightcoder.task.Task>}.
+     * Loads tasks from the storage file and converts them into {@code ArrayList<Task>}.
      */
     public void loadTasks() {
         this.tasks = this.STORAGE.loadTasks();
