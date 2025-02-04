@@ -38,16 +38,16 @@ public class Ui {
                 "and I'll keep track.\n\t      Example: todo Finish the project report"),
         DEADLINE("deadline <String> /by <String>", "Adds a task with a deadline. Perfect for those " +
                 "time-sensitive missions!\n\t      Example: deadline Submit assignment /by 2025-01-30 23:59"),
-        EVENT("event <String> /from <String> /to <String>", "Adds an event with a start and end time. " +
-                "Keep your schedule sharp!\n\t      Example: event Team meeting /from 2025-01-21 3:00 PM " +
+        EVENT("event <String> /from <String> /to <String>", "Adds an event with a start and " +
+                "end time. Keep your schedule sharp!\n\t      Example: event Team meeting /from 2025-01-21 3:00 PM " +
                 "/to 2025-01-21 4:00 PM"),
         LIST("list", "Shows all your tasks. Think of it as your personal task constellation."),
         MARK("mark <int>", "Marks a task as complete. Use the task number from the list.\n" +
                 "\t      Example: mark 1"),
         UNMARK("unmark <int>", "Marks a task as incomplete. Sometimes things need a second look!\n" +
                 "\t      tExample: unmark 1"),
-        DELETE("delete <int>", "Deletes a task from your to-do list. Use the task number from the list.\n" +
-                "\t      Example: delete 2"),
+        DELETE("delete <int>", "Deletes a task from your to-do list. Use the task number from " +
+                "the list.\n\t      Example: delete 2"),
         BYE("bye", "Exits the program. But don't be a stranger-I'll be here when you need me again!");
 
         private final String syntax;
@@ -82,6 +82,11 @@ public class Ui {
         throw new UnsupportedOperationException("nightcoder.ui.Ui class should not be instantiated.");
     }
 
+    /**
+     * Prints the line with a specific indent, mainly for NightCoder's response.
+     *
+     * @param line The string to be printed with an indent.
+     */
     public static void printIndentedLine(String line) {
         System.out.println("\t" + line);
     }

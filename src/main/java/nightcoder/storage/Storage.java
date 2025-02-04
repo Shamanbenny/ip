@@ -103,7 +103,13 @@ public class Storage {
         }
 
         String type = parts[0];
+        if (!parts[1].equals("0") && !parts[1].equals("1")) {
+            throw new IllegalArgumentException("Invalid task format detected: " + line);
+        }
         boolean isCompleted = parts[1].equals("1");
+        if (parts[2].trim().isEmpty()) {
+            throw new IllegalArgumentException("Invalid task format detected: " + line);
+        }
         String description = parts[2];
 
         return switch (type) {
@@ -112,10 +118,16 @@ public class Storage {
                 if (parts.length < 4) {
                     throw new IllegalArgumentException("Invalid task format detected: " + line);
                 }
+                if (parts[3].trim().isEmpty()) {
+                    throw new IllegalArgumentException("Invalid task format detected: " + line);
+                }
                 yield new Deadline(description, isCompleted, parts[3]);
             }
             case "E" -> {
                 if (parts.length < 5) {
+                    throw new IllegalArgumentException("Invalid task format detected: " + line);
+                }
+                if (parts[3].trim().isEmpty() || parts[4].trim().isEmpty()) {
                     throw new IllegalArgumentException("Invalid task format detected: " + line);
                 }
                 yield new Event(description, isCompleted, parts[3], parts[4]);
