@@ -9,7 +9,7 @@ package nightcoder.task;
  * @version 8.1
  */
 public abstract class Task {
-    private final String description;
+    private final String DESCRIPTION;
     private boolean isCompleted;
 
     /**
@@ -19,14 +19,14 @@ public abstract class Task {
      * @param isCompleted The initial completion status of the task (true if completed, false otherwise).
      */
     public Task(String description, boolean isCompleted) {
-        this.description = description;
+        this.DESCRIPTION = description;
         this.isCompleted = isCompleted;
     }
 
     public abstract String getStringFormat();
 
     public String getDescription() {
-        return this.description;
+        return this.DESCRIPTION;
     }
 
     /**
@@ -54,6 +54,6 @@ public abstract class Task {
      */
     @Override
     public String toString() {
-        return (this.isCompleted ? "[X] ":"[ ] ") + this.description;
+        return (this.isCompleted ? "[X] ":"[ ] ") + this.DESCRIPTION;
     }
 }

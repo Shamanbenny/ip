@@ -1,11 +1,11 @@
 package nightcoder;
 
+import java.util.Scanner;
+
 import nightcoder.parser.Parser;
 import nightcoder.storage.Storage;
 import nightcoder.task.TaskList;
 import nightcoder.ui.Ui;
-
-import java.util.Scanner;
 
 /**
  * A playful and motivational chatbot assistant for late-night coding sessions.

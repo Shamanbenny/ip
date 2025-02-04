@@ -1,11 +1,5 @@
 package nightcoder.storage;
 
-import nightcoder.task.Deadline;
-import nightcoder.task.Event;
-import nightcoder.task.Task;
-import nightcoder.task.ToDo;
-import nightcoder.ui.Ui;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,6 +9,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+
+import nightcoder.task.Deadline;
+import nightcoder.task.Event;
+import nightcoder.task.Task;
+import nightcoder.task.ToDo;
+import nightcoder.ui.Ui;
 
 /**
  * Handles the reading and writing of task data to a file.

@@ -8,7 +8,7 @@ package nightcoder.task;
  * @version 8.1
  */
 public class Deadline extends Task {
-    private final String dueBy;
+    private final String DUE_BY;
 
     /**
      * Constructs a new Deadline task with the specified description and deadline.
@@ -19,11 +19,11 @@ public class Deadline extends Task {
      */
     public Deadline(String description, boolean isCompleted, String dueBy) {
         super(description, isCompleted);
-        this.dueBy = dueBy;
+        this.DUE_BY = dueBy;
     }
 
     public String getDueBy() {
-        return this.dueBy;
+        return this.DUE_BY;
     }
 
     /**
@@ -37,6 +37,6 @@ public class Deadline extends Task {
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (By: " + this.dueBy + ")";
+        return "[D]" + super.toString() + " (By: " + this.DUE_BY + ")";
     }
 }

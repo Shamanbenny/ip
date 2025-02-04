@@ -8,8 +8,8 @@ package nightcoder.task;
  * @version 8.1
  */
 public class Event extends Task {
-    private final String startTime;
-    private final String endTime;
+    private final String START_TIME;
+    private final String END_TIME;
 
     /**
      * Constructs a new Event task with the specified description, completion status, start time, and end time.
@@ -21,16 +21,16 @@ public class Event extends Task {
      */
     public Event(String description, boolean isCompleted, String startTime, String endTime) {
         super(description, isCompleted);
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.START_TIME = startTime;
+        this.END_TIME = endTime;
     }
 
     public String getStartTime() {
-        return this.startTime;
+        return this.START_TIME;
     }
 
     public String getEndTime() {
-        return this.endTime;
+        return this.END_TIME;
     }
 
     /**
@@ -44,6 +44,6 @@ public class Event extends Task {
 
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (From: " + this.startTime + ", To: " + this.endTime + ")";
+        return "[E]" + super.toString() + " (From: " + this.START_TIME + ", To: " + this.END_TIME + ")";
     }
 }

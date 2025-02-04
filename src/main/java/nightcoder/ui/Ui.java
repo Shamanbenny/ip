@@ -49,8 +49,8 @@ public class Ui {
                 "the list.\n\t      Example: delete 2"),
         BYE("bye", "Exits the program. But don't be a stranger-I'll be here when you need me again!");
 
-        private final String syntax;
-        private final String description;
+        private final String SYNTAX;
+        private final String DESCRIPTION;
 
         /**
          * Constructs a CommandHelp enum instance with the specified syntax and description.
@@ -59,16 +59,16 @@ public class Ui {
          * @param description The description of the command.
          */
         CommandHelp(String syntax, String description) {
-            this.syntax = syntax;
-            this.description = description;
+            this.SYNTAX = syntax;
+            this.DESCRIPTION = description;
         }
 
         public String getSyntax() {
-            return syntax;
+            return SYNTAX;
         }
 
         public String getDescription() {
-            return description;
+            return DESCRIPTION;
         }
     }
 
