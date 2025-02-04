@@ -49,9 +49,6 @@ public abstract class Task {
 
     /**
      * Returns a string representation of the task, including its status and description.
-     * The format is:
-     * - `[X] <description>` for completed tasks.
-     * - `[ ] <description>` for incomplete tasks.
      *
      * @return A string representation of the task.
      */

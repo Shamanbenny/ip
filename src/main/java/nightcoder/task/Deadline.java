@@ -15,6 +15,7 @@ public class Deadline extends Task {
      *
      * @param description A brief description of the task.
      * @param isCompleted The initial completion status of the task (true if completed, false otherwise).
+     * @param dueBy The deadline for the task.
      */
     public Deadline(String description, boolean isCompleted, String dueBy) {
         super(description, isCompleted);
