@@ -54,6 +54,6 @@ public abstract class Task {
      */
     @Override
     public String toString() {
-        return (this.isCompleted ? "[X] ":"[ ] ") + this.DESCRIPTION;
+        return ((this.isCompleted) ? "[X] " : "[ ] ") + this.DESCRIPTION;
     }
 }

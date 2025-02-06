@@ -92,7 +92,7 @@ public class Storage {
     /**
      * Parses a task entry from a formatted string and creates a {@code Task} object.
      *
-     * @param line The string containing task details in the format: Type|Completed|Description|[Additional Data].
+     * @param line The string containing task details in the format: Type|isCompleted|Description|[Additional Data].
      * @return A {@code Task} object parsed from the string.
      * @throws IllegalArgumentException If the format is invalid or missing required fields.
      */
@@ -160,10 +160,10 @@ public class Storage {
      * Updates the completion status of a task in the tasks file.
      *
      * @param idx The 0-based index of the task to be updated.
-     * @param completed {@code true} if the task is completed, {@code false} otherwise.
+     * @param isCompleted {@code true} if the task is completed, {@code false} otherwise.
      * @throws IOException If an I/O error occurs while updating the file.
      */
-    public void setCompleted(int idx, boolean completed) throws IOException {
+    public void setCompleted(int idx, boolean isCompleted) throws IOException {
         ArrayList<String> lines = this.readLines();
 
         // Edge case: Ensure the index is within bounds
@@ -177,7 +177,7 @@ public class Storage {
             throw new IOException("Corrupted task entry in file");
         }
 
-        parts[1] = completed ? "1" : "0"; // Update completion status
+        parts[1] = isCompleted ? "1" : "0"; // Update completion status
         lines.set(idx, String.join("|", parts)); // Reconstruct the line
 
         this.writeLines(lines);

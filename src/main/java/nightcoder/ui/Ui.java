@@ -33,22 +33,22 @@ public class Ui {
      */
     private enum CommandHelp {
         HELP("help", "Prints this handy guide. Because even pros need reminders sometimes."),
-        TODO("todo <String>", "Adds a to-do task to your list. Just tell me what needs doing, " +
-                "and I'll keep track.\n\t      Example: todo Finish the project report"),
-        DEADLINE("deadline <String> /by <String>", "Adds a task with a deadline. Perfect for those " +
-                "time-sensitive missions!\n\t      Example: deadline Submit assignment /by 2025-01-30 23:59"),
-        EVENT("event <String> /from <String> /to <String>", "Adds an event with a start and " +
-                "end time. Keep your schedule sharp!\n\t      Example: event Team meeting /from 2025-01-21 3:00 PM " +
-                "/to 2025-01-21 4:00 PM"),
+        TODO("todo <String>", "Adds a to-do task to your list. Just tell me what needs doing, "
+                + "and I'll keep track.\n\t      Example: todo Finish the project report"),
+        DEADLINE("deadline <String> /by <String>", "Adds a task with a deadline. Perfect for those "
+                + "time-sensitive missions!\n\t      Example: deadline Submit assignment /by 2025-01-30 23:59"),
+        EVENT("event <String> /from <String> /to <String>", "Adds an event with a start and "
+                + "end time. Keep your schedule sharp!\n\t      Example: event Team meeting /from 2025-01-21 3:00 PM "
+                + "/to 2025-01-21 4:00 PM"),
         LIST("list", "Shows all your tasks. Think of it as your personal task constellation."),
-        FIND("find <String>", "Find specific keyword amongst your list of tasks. I'll do the work of finding " +
-                "it for you!\n\t      Example: find homework"),
-        MARK("mark <int>", "Marks a task as complete. Use the task number from the list.\n" +
-                "\t      Example: mark 1"),
-        UNMARK("unmark <int>", "Marks a task as incomplete. Sometimes things need a second look!\n" +
-                "\t      Example: unmark 1"),
-        DELETE("delete <int>", "Deletes a task from your to-do list. Use the task number from " +
-                "the list.\n\t      Example: delete 2"),
+        FIND("find <String>", "Find specific keyword amongst your list of tasks. I'll do the work of finding "
+                + "it for you!\n\t      Example: find homework"),
+        MARK("mark <int>", "Marks a task as complete. Use the task number from the list.\n"
+                + "\t      Example: mark 1"),
+        UNMARK("unmark <int>", "Marks a task as incomplete. Sometimes things need a second look!\n"
+                + "\t      Example: unmark 1"),
+        DELETE("delete <int>", "Deletes a task from your to-do list. Use the task number from "
+                + "the list.\n\t      Example: delete 2"),
         BYE("bye", "Exits the program. But don't be a stranger-I'll be here when you need me again!");
 
         private final String SYNTAX;
@@ -106,8 +106,8 @@ public class Ui {
         System.out.println(" ");
         Ui.printIndentedLine("Let's make some magic together. What's on the docket tonight?");
         System.out.println(" ");
-        Ui.printIndentedLine("If you're unsure about what I can do, just type \"help\", and I'll get you " +
-                "sorted in no time!");
+        Ui.printIndentedLine("If you're unsure about what I can do, just type \"help\", and I'll get you "
+                + "sorted in no time!");
         System.out.println(Ui.LINE_BREAK + "\n");
     }
 
@@ -118,8 +118,8 @@ public class Ui {
      * @param idx The 1-based index of the newly added task.
      */
     public static void printTaskAdded(String description, int idx) {
-        System.out.println("\t[ Task #" + idx + " Added: " + description + " ]");
-        System.out.println("\tGot it! I'll keep this safe in your to-do list. Let me know what's next!");
+        Ui.printIndentedLine("[ Task #" + idx + " Added: " + description + " ]");
+        Ui.printIndentedLine("Got it! I'll keep this safe in your to-do list. Let me know what's next!");
     }
 
     /**
@@ -129,8 +129,8 @@ public class Ui {
      */
     public static void printInvalidUsage(String command) {
         Ui.printIndentedLine("[ Oops! ]");
-        Ui.printIndentedLine("Incorrect usage of \"" + command + "\". Type \"help\" to refer to its " +
-                "appropriate usage. Let's get back on track!");
+        Ui.printIndentedLine("Incorrect usage of \"" + command + "\". Type \"help\" to refer to its "
+                + "appropriate usage. Let's get back on track!");
     }
 
     /**
@@ -163,15 +163,15 @@ public class Ui {
      * to understand and use the application effectively.
      */
     public static void printHelp() {
-        System.out.println("\t[ Night Code Command Guide ]");
-        System.out.println("\tNeed a hand? No problem! Here's what I can do for you:\n");
+        Ui.printIndentedLine("[ Night Code Command Guide ]");
+        Ui.printIndentedLine("Need a hand? No problem! Here's what I can do for you:\n");
 
         for (Ui.CommandHelp cmd : Ui.CommandHelp.values()) {
-            System.out.println("\t    " + cmd.getSyntax());
-            System.out.println("\t    - " + cmd.getDescription() + "\n");
+            Ui.printIndentedLine("    " + cmd.getSyntax());
+            Ui.printIndentedLine("    - " + cmd.getDescription() + "\n");
         }
 
-        System.out.println("\tGot it? Let's get back to work!");
+        Ui.printIndentedLine("Got it? Let's get back to work!");
     }
 
     /**

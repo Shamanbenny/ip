@@ -195,9 +195,9 @@ public class Parser {
      * If the task selected is already set as it should, it also displays an error message.
      *
      * @param idx The 1-based index of the task in the list to update.
-     * @param completed {@code true} if the task is completed, {@code false} otherwise.
+     * @param isCompleted {@code true} if the task is completed, {@code false} otherwise.
      */
-    private void setCompleted(int idx, boolean completed) {
+    private void setCompleted(int idx, boolean isCompleted) {
         // Edge-Case ['idx' out of bounds]
         if (idx > this.TASKS.size() || idx < 1) {
             System.out.println("""
@@ -209,9 +209,9 @@ public class Parser {
 
         // idx is originally 1-indexed [Therefore minus 1 to access 0-indexed ListArray]
         Task task = this.TASKS.get(idx - 1);
-        if (task.isCompleted() == completed) {
+        if (task.isCompleted() == isCompleted) {
             // Edge-Case ['task' is already set as complete/incomplete]
-            if (completed) {
+            if (isCompleted) {
                 System.out.println("\t[ Task Already Complete! ]");
                 System.out.println("\tLooks like task \"" + task.getDescription() + "\" is already marked as done. " +
                         "You're ahead of the game!");
@@ -221,10 +221,10 @@ public class Parser {
                         "No need to unmark it again!");
             }
         } else {
-            task.setCompleted(completed);
+            task.setCompleted(isCompleted);
             try {
-                this.STORAGE.setCompleted(idx - 1, completed); // Convert to zero-based index
-                if (completed) {
+                this.STORAGE.setCompleted(idx - 1, isCompleted); // Convert to zero-based index
+                if (isCompleted) {
                     System.out.println("\t[ Task Marked as Complete! ]");
                     System.out.println("\tGreat job! Task \"" + task.getDescription() + "\" is now marked as done. " +
                             "On to the next one!");
@@ -234,7 +234,7 @@ public class Parser {
                             "Let's tackle it when you're ready!");
                 }
             } catch (IOException e) {
-                if (completed) {
+                if (isCompleted) {
                     System.out.println("\t[ Task Marked as Complete! ]");
                 } else {
                     System.out.println("\t[ Task Marked as Incomplete! ]");
