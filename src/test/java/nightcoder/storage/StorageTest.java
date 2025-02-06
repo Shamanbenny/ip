@@ -67,17 +67,17 @@ public class StorageTest {
     public void parseStringToTask_invalidFormat_throwsException() {
         // Missing task type
         assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("|1|Todo without type"));
-        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("|1|Task without " +
-                "type|Tonight"));
-        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("|1|Task without " +
-                "type|2025-01-01 10:00|2025-01-01 12:00"));
+        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("|1|Task without "
+                + "type|Tonight"));
+        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("|1|Task without "
+                + "type|2025-01-01 10:00|2025-01-01 12:00"));
 
         // Missing completion status
         assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("T||Missing completion"));
-        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("D||Missing completion" +
-                "|Tonight"));
-        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("E||Missing completion" +
-                "|2:00|4:00"));
+        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("D||Missing completion"
+                + "|Tonight"));
+        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("E||Missing completion"
+                + "|2:00|4:00"));
 
         // Missing description
         assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("T|0|"));
@@ -129,13 +129,13 @@ public class StorageTest {
         // Non-numeric completion status
         assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("T|X|Invalid Completion"));
         assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("D|X|Invalid Completion|2:00"));
-        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("E|X|Invalid Completion|" +
-                "2:00|4:00"));
+        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("E|X|Invalid Completion|"
+                + "2:00|4:00"));
 
         // Negative number as completion status
         assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("T|-1|Negative Completion"));
         assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("D|-1|Negative Completion|2:00"));
-        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("E|-1|Negative Completion|" +
-                "2:00|4:00"));
+        assertThrows(IllegalArgumentException.class, () -> STORAGE.parseStringToTask("E|-1|Negative Completion|"
+                + "2:00|4:00"));
     }
 }

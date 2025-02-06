@@ -213,12 +213,12 @@ public class Parser {
             // Edge-Case ['task' is already set as complete/incomplete]
             if (isCompleted) {
                 System.out.println("\t[ Task Already Complete! ]");
-                System.out.println("\tLooks like task \"" + task.getDescription() + "\" is already marked as done. " +
-                        "You're ahead of the game!");
+                System.out.println("\tLooks like task \"" + task.getDescription() + "\" is already marked as done. "
+                        + "You're ahead of the game!");
             } else {
                 System.out.println("\t[ Task Already Incomplete ]!");
-                System.out.println("\tTask \"" + task.getDescription() + "\" is already on your to-do list. " +
-                        "No need to unmark it again!");
+                System.out.println("\tTask \"" + task.getDescription() + "\" is already on your to-do list. "
+                        + "No need to unmark it again!");
             }
         } else {
             task.setCompleted(isCompleted);
@@ -226,12 +226,12 @@ public class Parser {
                 this.STORAGE.setCompleted(idx - 1, isCompleted); // Convert to zero-based index
                 if (isCompleted) {
                     System.out.println("\t[ Task Marked as Complete! ]");
-                    System.out.println("\tGreat job! Task \"" + task.getDescription() + "\" is now marked as done. " +
-                            "On to the next one!");
+                    System.out.println("\tGreat job! Task \"" + task.getDescription() + "\" is now marked as done. "
+                            + "On to the next one!");
                 } else {
                     System.out.println("\t[ Task Marked as Incomplete! ]");
-                    System.out.println("\tGot it! Task \"" + task.getDescription() + "\" is back on your to-do list. " +
-                            "Let's tackle it when you're ready!");
+                    System.out.println("\tGot it! Task \"" + task.getDescription() + "\" is back on your to-do list. "
+                            + "Let's tackle it when you're ready!");
                 }
             } catch (IOException e) {
                 if (isCompleted) {
@@ -270,7 +270,7 @@ public class Parser {
             Ui.printErrorUpdatingTasksFile(e);
         }
         System.out.println("\t[ Task Deleted! ]");
-        System.out.println("\tTask \"" + task.getDescription() + "\" has been removed from your list. " +
-                "Poof, it's gone! Let me know if there's anything else to tidy up.");
+        System.out.println("\tTask \"" + task.getDescription() + "\" has been removed from your list. "
+                + "Poof, it's gone! Let me know if there's anything else to tidy up.");
     }
 }

@@ -178,9 +178,8 @@ public class Ui {
      * Displays a farewell message before exiting the application
      */
     public static void printExit() {
-        System.out.println(Ui.LINE_BREAK);
+        System.out.println(Ui.LINE_BREAK + "\n");
         System.out.println("""
-                
                 \tAlright, signing off for now. Remember, even the brightest coders need some rest-yes, I'm
                 \tlooking at you! ( 0 w 0 )""");
         System.out.println("""
