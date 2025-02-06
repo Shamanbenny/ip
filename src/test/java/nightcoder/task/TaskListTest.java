@@ -12,9 +12,9 @@ public class TaskListTest {
     @Test
     public void parseDate_all20thOfEachMonth_returnsFormattedDateString() {
         String[] expectedDates = {
-                "Jan 20 2025", "Feb 20 2025", "Mar 20 2025", "Apr 20 2025",
-                "May 20 2025", "Jun 20 2025", "Jul 20 2025", "Aug 20 2025",
-                "Sep 20 2025", "Oct 20 2025", "Nov 20 2025", "Dec 20 2025"
+            "Jan 20 2025", "Feb 20 2025", "Mar 20 2025", "Apr 20 2025",
+            "May 20 2025", "Jun 20 2025", "Jul 20 2025", "Aug 20 2025",
+            "Sep 20 2025", "Oct 20 2025", "Nov 20 2025", "Dec 20 2025"
         };
 
         for (int month = 1; month <= 12; month++) {

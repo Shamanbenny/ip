@@ -160,7 +160,7 @@ public class TaskList {
         } else {
             for (int idx = 0; idx < this.size(); idx++) {
                 Task task = this.tasks.get(idx);
-                Ui.printIndentedLine((idx+1) + "." + task);
+                Ui.printIndentedLine((idx + 1) + "." + task);
             }
         }
     }
@@ -178,7 +178,7 @@ public class TaskList {
             for (int idx = 0; idx < this.size(); idx++) {
                 Task task = this.tasks.get(idx);
                 if (task.getDescription().toLowerCase().contains(keyword.toLowerCase())) {
-                    Ui.printIndentedLine((idx+1) + "." + task);
+                    Ui.printIndentedLine((idx + 1) + "." + task);
                     isFound = true;
                 }
             }
