@@ -112,6 +112,29 @@ public class Ui {
     }
 
     /**
+     * Returns the welcome message without the ASCII art logo.
+     *
+     * @param part The index for the part of the welcome message to return.
+     * @return The String containing the welcome message.
+     */
+    public static String getWelcomeString(int part) {
+        switch (part) {
+        case 1:
+            return "Ah, there you are! The moon is bright, the code is flowing, and caffeine-wait, I mean "
+                    + "motivation-fuels our mission tonight.";
+        case 2:
+            return "Welcome back to Night Coder, your loyal (and slightly sleep-deprived) coding companion. "
+                    + "Whether it's wrangling deadlines, or organizing your todo list, I'm here to lend a hand.";
+        case 3:
+            return "Let's make some magic together. What's on the docket tonight?";
+        case 4:
+            return "If you're unsure about what I can do, just type \"help\", and I'll get you sorted in no time!";
+        default:
+            return "";
+        }
+    }
+
+    /**
      * Prints a message indicating a task has been added.
      *
      * @param description The description of the newly added task.
@@ -166,7 +189,7 @@ public class Ui {
         Ui.printIndentedLine("[ Night Code Command Guide ]");
         Ui.printIndentedLine("Need a hand? No problem! Here's what I can do for you:\n");
 
-        for (Ui.CommandHelp cmd : Ui.CommandHelp.values()) {
+        for (CommandHelp cmd : CommandHelp.values()) {
             Ui.printIndentedLine("    " + cmd.getSyntax());
             Ui.printIndentedLine("    - " + cmd.getDescription() + "\n");
         }

@@ -39,4 +39,8 @@ public class NightCoder {
         NightCoder.TASKS.saveTasks();
         Ui.printExit();
     }
+
+    public String getResponse(String input) {
+        return "NightCoder heard: " + input;
+    }
 }

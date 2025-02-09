@@ -1,5 +1,6 @@
 package nightcoder.javafx;
 
+import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -10,7 +11,7 @@ public class DialogBox extends HBox {
     private Label text;
     private ImageView displayPicture;
 
-    public DialogBox(String s, Image i, boolean isUser) {
+    private DialogBox(String s, Image i, boolean isUser) {
         text = new Label(s);
         displayPicture = new ImageView(i);
 
@@ -26,6 +27,13 @@ public class DialogBox extends HBox {
             this.setAlignment(Pos.TOP_LEFT);
             this.getChildren().addAll(displayPicture, text);
         }
+    }
 
+    public static DialogBox ofUser(String s, Image i) {
+        return new DialogBox(s, i, true);
+    }
+
+    public static DialogBox ofNightCoder(String s, Image i) {
+        return new DialogBox(s, i, false);
     }
 }
