@@ -1,8 +1,8 @@
-# nightcoder.NightCoder User Guide
+# NightCoder User Guide
 
-## Welcome to nightcoder.NightCoder
+## Welcome to `nightcoder.NightCoder`
 
-nightcoder.NightCoder is your playful and motivational coding companion for late-night sessions. With a vibrant personality and powerful task management features, nightcoder.NightCoder is here to keep you organized, inspired, and focused.
+`nightcoder.NightCoder` is your playful and motivational coding companion for late-night sessions. With a vibrant personality and powerful task management features, nightcoder.NightCoder is here to keep you organized, inspired, and focused.
 
 ---
 
@@ -180,28 +180,6 @@ delete 2
 
 ---
 
-### Exiting nightcoder.NightCoder
-Wrap up your session and exit nightcoder.NightCoder gracefully.
-
-**Command Syntax:**
-```
-bye
-```
-
-**Example:**
-```
-bye
-```
-
-**Expected Outcome:**
-```
-	Alright, signing off for now. Remember, even the brightest coders need some rest...
-	Goodnight, and happy coding!
-	Powering Down...
-```
-
----
-
 ## Summary
-nightcoder.NightCoder simplifies task management while keeping your coding spirits high. Whether you're organizing deadlines or clearing your to-do list, nightcoder.NightCoder is always here to assist. Happy coding!
+`nightcoder.NightCoder` simplifies task management while keeping your coding spirits high. Whether you're organizing deadlines or clearing your to-do list, nightcoder.NightCoder is always here to assist. Happy coding!
 

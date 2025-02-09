@@ -15,7 +15,7 @@ import nightcoder.ui.Ui;
  * The class interacts with storage object and UI class to persist and display tasks respectively.
  *
  * @author ShamanBenny
- * @version 8.1
+ * @version 10
  */
 public class TaskList {
     private ArrayList<Task> tasks;
@@ -92,16 +92,16 @@ public class TaskList {
      * Adds a To Do to the list of tasks. By default, a newly added To Do is not completed.
      *
      * @param description The description of the task to be added to the list.
+     * @return The String message indicating the attempt of adding the To Do task.
      */
-    public void addToDo(String description) {
+    public String addToDo(String description) {
         Task task = new ToDo(description, false);
         this.tasks.add(task);
         try {
             this.STORAGE.appendTask("T|0|" + description);
-            Ui.printTaskAdded(description, this.size());
+            return Ui.getTaskAdded(description, this.size());
         } catch (IOException e) {
-            Ui.printIndentedLine("[ Task #" + this.size() + " Added: " + description + " ]");
-            Ui.printErrorUpdatingTasksFile(e);
+            return "[ Task #" + this.size() + " Added: " + description + " ]\n" + Ui.getErrorUpdatingTasksFile(e);
         }
     }
 
@@ -111,18 +111,18 @@ public class TaskList {
      *
      * @param description The description of the task to be added to the list.
      * @param dueBy A string detailing when the task is due by.
+     * @return The String message indicating the attempt of adding the Deadline task.
      */
-    public void addDeadline(String description, String dueBy) {
+    public String addDeadline(String description, String dueBy) {
         String parsedDueBy = parseDate(dueBy);
 
         Task task = new Deadline(description, false, parsedDueBy);
         this.tasks.add(task);
         try {
             this.STORAGE.appendTask("D|0|" + description + "|" + parsedDueBy);
-            Ui.printTaskAdded(description, this.size());
+            return Ui.getTaskAdded(description, this.size());
         } catch (IOException e) {
-            Ui.printIndentedLine("[ Task #" + this.size() + " Added: " + description + " ]");
-            Ui.printErrorUpdatingTasksFile(e);
+            return "[ Task #" + this.size() + " Added: " + description + " ]\n" + Ui.getErrorUpdatingTasksFile(e);
         }
     }
 
@@ -133,8 +133,9 @@ public class TaskList {
      * @param description The description of the task to be added to the list.
      * @param startTime A string detailing when the event starts.
      * @param endTime A string detailing when the event ends.
+     * @return The String message indicating the attempt of adding the Event task.
      */
-    public void addEvent(String description, String startTime, String endTime) {
+    public String addEvent(String description, String startTime, String endTime) {
         String parsedStartTime = parseDate(startTime);
         String parsedEndTime = parseDate(endTime);
 
@@ -142,50 +143,59 @@ public class TaskList {
         this.tasks.add(task);
         try {
             this.STORAGE.appendTask("E|0|" + description + "|" + parsedStartTime + "|" + parsedEndTime);
-            Ui.printTaskAdded(description, this.size());
+            return Ui.getTaskAdded(description, this.size());
         } catch (IOException e) {
-            Ui.printIndentedLine("[ Task #" + this.size() + " Added: " + description + " ]");
-            Ui.printErrorUpdatingTasksFile(e);
+            return "[ Task #" + this.size() + " Added: " + description + " ]\n" + Ui.getErrorUpdatingTasksFile(e);
         }
     }
 
     /**
      * Displays the list of tasks currently stored along with their indices.
      * If the list is empty, a message indicating no tasks are available is shown.
+     *
+     * @return The String message of the list of tasks along with their indices.
      */
-    public void listTasks() {
+    public String listTasks() {
         if (this.tasks.isEmpty()) {
-            Ui.printIndentedLine("[ Your To-Do List is Empty! ]");
-            Ui.printIndentedLine("Looks like we're starting with a clean slate. What shall we tackle first?");
+            String output = "[ Your To-Do List is Empty! ]\n";
+            output += "Looks like we're starting with a clean slate. What shall we tackle first?";
+            return output;
         } else {
+            StringBuilder output = new StringBuilder();
             for (int idx = 0; idx < this.size(); idx++) {
                 Task task = this.tasks.get(idx);
-                Ui.printIndentedLine((idx + 1) + "." + task);
+                output.append(idx + 1).append(".").append(task).append("\n");
             }
+            return output.toString();
         }
     }
 
     /**
      * Displays the list of tasks currently stored along with their indices containing the specific keyword.
      * If the list is empty, a message indicating no tasks are available is shown.
+     *
+     * @return The String message of the list of tasks along with their indices.
      */
-    public void listTasks(String keyword) {
+    public String listTasks(String keyword) {
         if (this.tasks.isEmpty()) {
-            Ui.printIndentedLine("[ Your To-Do List is Empty! ]");
-            Ui.printIndentedLine("Looks like we're starting with a clean slate. What shall we tackle first?");
+            String output = "[ Your To-Do List is Empty! ]\n";
+            output += "Looks like we're starting with a clean slate. What shall we tackle first?";
+            return output;
         } else {
             boolean isFound = false;
+            StringBuilder output = new StringBuilder();
             for (int idx = 0; idx < this.size(); idx++) {
                 Task task = this.tasks.get(idx);
                 if (task.getDescription().toLowerCase().contains(keyword.toLowerCase())) {
-                    Ui.printIndentedLine((idx + 1) + "." + task);
+                    output.append(idx + 1).append(".").append(task).append("\n");
                     isFound = true;
                 }
             }
             if (!isFound) {
-                Ui.printIndentedLine("[ No match found! ]");
-                Ui.printIndentedLine("Looks like the tasks you're trying to find doesn't exist. Anything else?");
+                output.append("[ No match found! ]").append("\n");
+                output.append("Looks like the tasks you're trying to find doesn't exist. Anything else?");
             }
+            return output.toString();
         }
     }
 
@@ -201,7 +211,7 @@ public class TaskList {
         try {
             this.STORAGE.writeLines(lines);
         } catch (IOException e) {
-            Ui.printErrorUpdatingTasksFile(e);
+            Ui.getErrorUpdatingTasksFile(e);
         }
     }
 }

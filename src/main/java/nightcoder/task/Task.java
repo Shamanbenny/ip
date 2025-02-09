@@ -6,7 +6,7 @@ package nightcoder.task;
  * task information.
  *
  * @author ShamanBenny
- * @version 8.1
+ * @version 10
  */
 public abstract class Task {
     private final String DESCRIPTION;
