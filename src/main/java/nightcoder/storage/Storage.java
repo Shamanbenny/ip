@@ -14,7 +14,6 @@ import nightcoder.task.Deadline;
 import nightcoder.task.Event;
 import nightcoder.task.Task;
 import nightcoder.task.ToDo;
-import nightcoder.ui.Ui;
 
 /**
  * Handles the reading and writing of task data to a file.
@@ -22,7 +21,7 @@ import nightcoder.ui.Ui;
  * from a persistent storage file.
  *
  * @author ShamanBenny
- * @version 8.1
+ * @version 10
  */
 public class Storage {
     private final String DATA_FOLDER;
@@ -60,7 +59,7 @@ public class Storage {
             }
             return lines;
         } catch (IOException e) {
-            Ui.printIndentedLine("[ ERROR ] Error reading tasks file: " + e.getMessage());
+            System.err.println("[ ERROR ] Error reading tasks file: " + e.getMessage());
             return new ArrayList<String>();
         }
     }
@@ -77,15 +76,14 @@ public class Storage {
             try {
                 tasks.add(parseStringToTask(line));
             } catch (IllegalArgumentException e) {
-                Ui.printIndentedLine("[ ERROR ] " + e.getMessage());
+                System.err.println("[ ERROR ] " + e.getMessage());
             }
         }
         if (tasks.isEmpty()) {
-            Ui.printIndentedLine("[ INFO ] No previous task data found. Starting fresh!");
+            System.out.println("[ INFO ] No previous task data found. Starting fresh!");
         } else {
-            Ui.printIndentedLine("[ INFO ] Tasks loaded successfully from previous sessions!");
+            System.out.println("[ INFO ] Tasks loaded successfully from previous sessions!");
         }
-        System.out.println(Ui.LINE_BREAK + "\n");
         return tasks;
     }
 

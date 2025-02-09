@@ -9,24 +9,9 @@ import java.io.IOException;
  * The class is designed as a utility class, hence it cannot be instantiated.
  *
  * @author ShamanBenny
- * @version 8.1
+ * @version 10
  */
 public class Ui {
-    public static final String LINE_BREAK =
-            "\t______________________________________________________________________________________________";
-    public static final String LOGO = """
-            \t  /$$   /$$ /$$           /$$         /$$      /$$$$$$                  /$$                   \s
-            \t | $$$ | $$|__/          | $$        | $$     /$$__  $$                | $$                   \s
-            \t | $$$$| $$ /$$  /$$$$$$ | $$$$$$$  /$$$$$$  | $$  \\__/  /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$\s
-            \t | $$ $$ $$| $$ /$$__  $$| $$__  $$|_  $$_/  | $$       /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$
-            \t | $$  $$$$| $$| $$  \\ $$| $$  \\ $$  | $$    | $$      | $$  \\ $$| $$  | $$| $$$$$$$$| $$  \\__/
-            \t | $$\\  $$$| $$| $$  | $$| $$  | $$  | $$ /$$| $$    $$| $$  | $$| $$  | $$| $$_____/| $$     \s
-            \t | $$ \\  $$| $$|  $$$$$$$| $$  | $$  |  $$$$/|  $$$$$$/|  $$$$$$/|  $$$$$$$|  $$$$$$$| $$     \s
-            \t |__/  \\__/|__/ \\____  $$|__/  |__/   \\___/   \\______/  \\______/  \\_______/ \\_______/|__/    \s
-            \t                /$$  \\ $$                                                                     \s
-            \t               |  $$$$$$/                                                                     \s
-            \t                \\______/                                                                      \s""";
-
     /**
      * Represents the commands supported by the NightCoder application.
      * Each command is associated with a syntax and a description to provide help and guidance for users.
@@ -34,22 +19,21 @@ public class Ui {
     private enum CommandHelp {
         HELP("help", "Prints this handy guide. Because even pros need reminders sometimes."),
         TODO("todo <String>", "Adds a to-do task to your list. Just tell me what needs doing, "
-                + "and I'll keep track.\n\t      Example: todo Finish the project report"),
+                + "and I'll keep track.\n\tExample: todo Finish the project report"),
         DEADLINE("deadline <String> /by <String>", "Adds a task with a deadline. Perfect for those "
-                + "time-sensitive missions!\n\t      Example: deadline Submit assignment /by 2025-01-30 23:59"),
+                + "time-sensitive missions!\n\tExample: deadline Submit assignment /by 2025-01-30 23:59"),
         EVENT("event <String> /from <String> /to <String>", "Adds an event with a start and "
-                + "end time. Keep your schedule sharp!\n\t      Example: event Team meeting /from 2025-01-21 3:00 PM "
+                + "end time. Keep your schedule sharp!\n\tExample: event Team meeting /from 2025-01-21 3:00 PM "
                 + "/to 2025-01-21 4:00 PM"),
         LIST("list", "Shows all your tasks. Think of it as your personal task constellation."),
         FIND("find <String>", "Find specific keyword amongst your list of tasks. I'll do the work of finding "
-                + "it for you!\n\t      Example: find homework"),
+                + "it for you!\n\tExample: find homework"),
         MARK("mark <int>", "Marks a task as complete. Use the task number from the list.\n"
-                + "\t      Example: mark 1"),
+                + "\tExample: mark 1"),
         UNMARK("unmark <int>", "Marks a task as incomplete. Sometimes things need a second look!\n"
-                + "\t      Example: unmark 1"),
+                + "\tExample: unmark 1"),
         DELETE("delete <int>", "Deletes a task from your to-do list. Use the task number from "
-                + "the list.\n\t      Example: delete 2"),
-        BYE("bye", "Exits the program. But don't be a stranger-I'll be here when you need me again!");
+                + "the list.\n\tExample: delete 2");
 
         private final String SYNTAX;
         private final String DESCRIPTION;
@@ -84,110 +68,95 @@ public class Ui {
     }
 
     /**
-     * Prints the line with a specific indent, mainly for NightCoder's response.
+     * Returns the welcome message without the ASCII art logo.
      *
-     * @param line The string to be printed with an indent.
+     * @param part The index for the part of the welcome message to return.
+     * @return The String containing the welcome message.
      */
-    public static void printIndentedLine(String line) {
-        System.out.println("\t" + line);
+    public static String getWelcomeString(int part) {
+        switch (part) {
+        case 1:
+            return "Ah, there you are! The moon is bright, the code is flowing, and caffeine-wait, I mean "
+                    + "motivation-fuels our mission tonight.\n\n"
+                    + "Welcome back to Night Coder, your loyal (and slightly sleep-deprived) coding companion. "
+                    + "Whether it's wrangling deadlines, or organizing your todo list, I'm here to lend a hand.";
+        case 2:
+            return "Let's make some magic together. What's on the docket tonight?\n\n"
+                    + "If you're unsure about what I can do, just type \"help\", and I'll get you sorted in no time!";
+        default:
+            return "";
+        }
     }
 
     /**
-     * Prints the welcome message along with an ASCII art logo.
-     */
-    public static void printWelcome() {
-        System.out.println("\n" + Ui.LINE_BREAK + "\n\n" + Ui.LOGO);
-        Ui.printIndentedLine("Booting Up...\n");
-        System.out.println("""
-                \tAh, there you are! The moon is bright, the code is flowing, and caffeine-wait, I mean
-                \tmotivation-fuels our mission tonight. Welcome back to Night Coder, your loyal (and slightly
-                \tsleep-deprived) coding companion. Whether it's wrangling deadlines, or organizing your todo
-                \tlist, I'm here to lend a hand.""");
-        System.out.println(" ");
-        Ui.printIndentedLine("Let's make some magic together. What's on the docket tonight?");
-        System.out.println(" ");
-        Ui.printIndentedLine("If you're unsure about what I can do, just type \"help\", and I'll get you "
-                + "sorted in no time!");
-        System.out.println(Ui.LINE_BREAK + "\n");
-    }
-
-    /**
-     * Prints a message indicating a task has been added.
+     * Returns the message indicating a task has been added.
      *
      * @param description The description of the newly added task.
      * @param idx The 1-based index of the newly added task.
+     * @return The String message indicating a task has been successfully added.
      */
-    public static void printTaskAdded(String description, int idx) {
-        Ui.printIndentedLine("[ Task #" + idx + " Added: " + description + " ]");
-        Ui.printIndentedLine("Got it! I'll keep this safe in your to-do list. Let me know what's next!");
+    public static String getTaskAdded(String description, int idx) {
+        return "[ Task #" + idx + " Added: " + description + " ]\n"
+                + "Got it! I'll keep this safe in your to-do list. Let me know what's next!";
     }
 
     /**
-     * Prints an error message for incorrect command usage.
+     * Returns the error message for incorrect command usage.
      *
      * @param command The name of the command for which the usage was invalid.
+     * @return The String message indicating the error for incorrect command usage.
      */
-    public static void printInvalidUsage(String command) {
-        Ui.printIndentedLine("[ Oops! ]");
-        Ui.printIndentedLine("Incorrect usage of \"" + command + "\". Type \"help\" to refer to its "
-                + "appropriate usage. Let's get back on track!");
+    public static String getInvalidUsage(String command) {
+        return "[ Oops! ]\n"
+                + "Incorrect usage of \"" + command + "\". Type \"help\" to refer to its "
+                + "appropriate usage. Let's get back on track!";
     }
 
     /**
-     * Prints an error message for invalid input that resulted in Number Format Exception.
+     * Returns the error message for invalid input that resulted in Number Format Exception.
      *
      * @param command The name of the command for which the input was invalid.
+     * @return The String message indicating the invalid input that resulted in NUmber Format Exception.
      */
-    public static void printInvalidNumberInput(String command) {
-        Ui.printIndentedLine("[ Invalid Usage! ]");
-        Ui.printIndentedLine("Hmm, please enter a number that matches one of your tasks on the list.");
-        Ui.printIndentedLine("Double-check your task list with \"list\", and try again!");
-        Ui.printIndentedLine("Example: " + command + " 1");
+    public static String getInvalidNumberInput(String command) {
+        return "[ Invalid Usage! ]\n"
+                + "Hmm, please enter a number that matches one of your tasks on the list.\n"
+                + "Double-check your task list with \"list\", and try again!\n"
+                + "Example: " + command + " 1";
     }
 
     /**
-     * Prints an error message regarding the IOException that occurred during the updating of Tasks Files.
+     * Returns the error message regarding the IOException that occurred during the updating of Tasks Files.
      *
      * @param e The IOException that occurred.
+     * @return The String message indicating the error message regarding the IOException.
      */
-    public static void printErrorUpdatingTasksFile(IOException e) {
+    public static String getErrorUpdatingTasksFile(IOException e) {
         System.err.println("Error writing to tasks file: " + e.getMessage());
-        Ui.printIndentedLine("[ ERROR ] It appears that the updating of the tasks data file has failed.");
-        Ui.printIndentedLine("          This may result in non-persistent task tracking if not addressed properly.");
-        Ui.printIndentedLine("[ LOG ]   " + e.getMessage());
+        return "[ ERROR ] It appears that the updating of the tasks data file has failed. "
+                + "This may result in non-persistent task tracking if not addressed properly.\n"
+                + "[ LOG ]   " + e.getMessage();
     }
 
     /**
-     * Prints a detailed guide of all available commands in the NightCoder application.
+     * Returns a detailed guide of all available commands in the NightCoder application.
      * The guide includes the syntax and description for each command, making it easy for users
      * to understand and use the application effectively.
+     *
+     * @return The String message for the printing of a detailed guide for all available commands.
      */
-    public static void printHelp() {
-        Ui.printIndentedLine("[ Night Code Command Guide ]");
-        Ui.printIndentedLine("Need a hand? No problem! Here's what I can do for you:\n");
+    public static String getHelp() {
+        StringBuilder output = new StringBuilder("""
+                [ Night Code Command Guide ]
+                Need a hand? No problem! Here's what I can do for you:
+                
+                """);
 
-        for (Ui.CommandHelp cmd : Ui.CommandHelp.values()) {
-            Ui.printIndentedLine("    " + cmd.getSyntax());
-            Ui.printIndentedLine("    - " + cmd.getDescription() + "\n");
+        for (CommandHelp cmd : CommandHelp.values()) {
+            output.append(cmd.getSyntax()).append("\n").append("- ").append(cmd.getDescription()).append("\n\n");
         }
 
-        Ui.printIndentedLine("Got it? Let's get back to work!");
-    }
-
-    /**
-     * Displays a farewell message before exiting the application
-     */
-    public static void printExit() {
-        System.out.println(Ui.LINE_BREAK + "\n");
-        System.out.println("""
-                \tAlright, signing off for now. Remember, even the brightest coders need some rest-yes, I'm
-                \tlooking at you! ( 0 w 0 )""");
-        System.out.println("""
-                \tIf you need me, you know where to find me. Until next time, keep dreaming big, debugging smart,
-                \tand chasing that moonlit inspiration.""");
-        Ui.printIndentedLine("Goodnight, and happy coding!");
-        System.out.println(" ");
-        Ui.printIndentedLine("Powering Down...");
-        System.out.println(Ui.LINE_BREAK);
+        output.append("Got it? Let's get back to work!");
+        return output.toString();
     }
 }

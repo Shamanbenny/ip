@@ -5,7 +5,7 @@ package nightcoder.task;
  * Extends the base Task class.
  *
  * @author ShamanBenny
- * @version 8.1
+ * @version 10
  */
 public class Deadline extends Task {
     private final String DUE_BY;
