@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -21,6 +22,7 @@ import nightcoder.ui.Ui;
  */
 public class TaskList {
     private ArrayList<Task> tasks;
+    private HashMap<String, Task> taskLookup; // HashMap for quick lookup for duplicate tasks
     private final Storage storage;
     private final DateTimeFormatter INPUT_DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private final DateTimeFormatter OUTPUT_DATE_FORMAT = DateTimeFormatter.ofPattern("MMM dd yyyy");
@@ -32,6 +34,7 @@ public class TaskList {
      */
     public TaskList(Storage storage) {
         this.tasks = new ArrayList<>();
+        this.taskLookup = new HashMap<>();
         this.storage = storage;
     }
 
@@ -62,7 +65,9 @@ public class TaskList {
      * @return The element that was removed from the list
      */
     public Task remove(int index) {
-        return this.tasks.remove(index);
+        Task removedTask = this.tasks.remove(index);
+        this.taskLookup.remove(removedTask.getDescription().toLowerCase());
+        return removedTask;
     }
 
     /**
@@ -70,6 +75,9 @@ public class TaskList {
      */
     public void loadTasks() {
         this.tasks = this.storage.loadTasks();
+        for (Task task : this.tasks) {
+            this.taskLookup.put(task.getDescription().toLowerCase(), task); // Populate HashMap
+        }
     }
 
     /**
@@ -97,8 +105,13 @@ public class TaskList {
      * @return The String message indicating the attempt of adding the To Do task.
      */
     public String addToDo(String description) {
+        if (this.taskLookup.containsKey(description.toLowerCase())) {
+            return "[ Duplicate Task ]\nTask already exists: " + description;
+        }
+
         Task task = new ToDo(description, false);
         this.tasks.add(task);
+        this.taskLookup.put(description.toLowerCase(), task);
         try {
             this.storage.appendTask("T|0|" + description);
             return Ui.getTaskAdded(description, this.size());
@@ -116,10 +129,14 @@ public class TaskList {
      * @return The String message indicating the attempt of adding the Deadline task.
      */
     public String addDeadline(String description, String dueBy) {
-        String parsedDueBy = parseDate(dueBy);
+        if (this.taskLookup.containsKey(description.toLowerCase())) {
+            return "[ Duplicate Task ]\nTask already exists: " + description;
+        }
 
+        String parsedDueBy = parseDate(dueBy);
         Task task = new Deadline(description, false, parsedDueBy);
         this.tasks.add(task);
+        this.taskLookup.put(description.toLowerCase(), task);
         try {
             this.storage.appendTask("D|0|" + description + "|" + parsedDueBy);
             return Ui.getTaskAdded(description, this.size());
@@ -138,11 +155,15 @@ public class TaskList {
      * @return The String message indicating the attempt of adding the Event task.
      */
     public String addEvent(String description, String startTime, String endTime) {
+        if (this.taskLookup.containsKey(description.toLowerCase())) {
+            return "[ Duplicate Task ]\nTask already exists: " + description;
+        }
+
         String parsedStartTime = parseDate(startTime);
         String parsedEndTime = parseDate(endTime);
-
         Task task = new Event(description, false, parsedStartTime, parsedEndTime);
         this.tasks.add(task);
+        this.taskLookup.put(description.toLowerCase(), task);
         try {
             this.storage.appendTask("E|0|" + description + "|" + parsedStartTime + "|" + parsedEndTime);
             return Ui.getTaskAdded(description, this.size());
