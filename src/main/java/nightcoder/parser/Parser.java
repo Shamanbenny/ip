@@ -43,11 +43,11 @@ public class Parser {
         case "help":
             return Ui.getHelp();
         case "todo":
-            if (parts.length != 2) {
+            if (parts.length != 2 || parts[1].trim().isEmpty()) {
                 return Ui.getInvalidUsage("todo");
             }
             String todoParams = parts[1];
-            return this.tasks.addToDo(todoParams);
+            return this.tasks.addToDo(todoParams.trim());
         case "deadline":
             if (parts.length != 2) {
                 return Ui.getInvalidUsage("deadline");
@@ -58,14 +58,14 @@ public class Parser {
                 return Ui.getInvalidUsage("deadline");
             }
             String[] deadlineParts = deadlineParams.split(" /by ", 2);
-            if (deadlineParts.length < 2 || deadlineParts[1].isEmpty()) {
+            if (deadlineParts.length < 2 || deadlineParts[0].trim().isEmpty() || deadlineParts[1].trim().isEmpty()) {
                 // Missing details for task description, "/by", or empty "/by" details.
                 return Ui.getInvalidUsage("deadline");
             }
             // Correct Usage from here...
             String deadlineDescription = deadlineParts[0];
             String deadlineBy = deadlineParts[1];
-            return this.tasks.addDeadline(deadlineDescription, deadlineBy);
+            return this.tasks.addDeadline(deadlineDescription.trim(), deadlineBy.trim());
         case "event":
             if (parts.length != 2) {
                 return Ui.getInvalidUsage("event");
@@ -87,11 +87,11 @@ public class Parser {
                 fromParams = eventParams.substring(fromIdx + 7);
                 toParams = eventParams.substring(toIdx + 5, fromIdx);
             }
-            if (eventDescription.isEmpty() || fromParams.isEmpty() || toParams.isEmpty()) {
+            if (eventDescription.trim().isEmpty() || fromParams.trim().isEmpty() || toParams.trim().isEmpty()) {
                 return Ui.getInvalidUsage("event");
             }
             // Correct Usage from here...
-            return this.tasks.addEvent(eventDescription, fromParams, toParams);
+            return this.tasks.addEvent(eventDescription.trim(), fromParams.trim(), toParams.trim());
         case "list":
             return this.tasks.listTasks();
         case "mark":

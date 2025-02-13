@@ -21,15 +21,20 @@ public class Event extends Task {
      */
     public Event(String description, boolean isCompleted, String startTime, String endTime) {
         super(description, isCompleted);
+        assert startTime != null && !startTime.trim().isEmpty() : "Event startTime cannot be null or empty";
+        assert endTime != null && !endTime.trim().isEmpty() : "Event endTime cannot be null or empty";
         this.START_TIME = startTime;
         this.END_TIME = endTime;
     }
 
     public String getStartTime() {
+        assert this.START_TIME != null && !this.START_TIME.trim().isEmpty() : "Event START_TIME should not "
+                + "be null or empty";
         return this.START_TIME;
     }
 
     public String getEndTime() {
+        assert this.END_TIME != null && !this.END_TIME.trim().isEmpty() : "Event END_TIME should not be null or empty";
         return this.END_TIME;
     }
 

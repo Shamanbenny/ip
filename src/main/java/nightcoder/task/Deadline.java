@@ -19,10 +19,12 @@ public class Deadline extends Task {
      */
     public Deadline(String description, boolean isCompleted, String dueBy) {
         super(description, isCompleted);
+        assert dueBy != null && !dueBy.trim().isEmpty() : "Deadline dueBy cannot be null or empty";
         this.DUE_BY = dueBy;
     }
 
     public String getDueBy() {
+        assert this.DUE_BY != null && !this.DUE_BY.trim().isEmpty() : "Deadline DUE_BY should not be null or empty";
         return this.DUE_BY;
     }
 

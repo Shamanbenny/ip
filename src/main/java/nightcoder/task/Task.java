@@ -19,13 +19,16 @@ public abstract class Task {
      * @param isCompleted The initial completion status of the task (true if completed, false otherwise).
      */
     public Task(String description, boolean isCompleted) {
-        this.DESCRIPTION = description;
+        assert description != null && !description.trim().isEmpty() : "Task description cannot be null or empty";
+        this.DESCRIPTION = description.trim();
         this.isCompleted = isCompleted;
+        assert this.DESCRIPTION.equals(description) : "Final DESCRIPTION should match the provided description";
     }
 
     public abstract String getStringFormat();
 
     public String getDescription() {
+        assert this.DESCRIPTION != null && !this.DESCRIPTION.trim().isEmpty() : "Task description should never be null or empty";
         return this.DESCRIPTION;
     }
 
@@ -54,6 +57,7 @@ public abstract class Task {
      */
     @Override
     public String toString() {
+        assert this.DESCRIPTION != null && !this.DESCRIPTION.trim().isEmpty() : "Task description should not be null or empty in toString";
         return ((this.isCompleted) ? "[X] " : "[ ] ") + this.DESCRIPTION;
     }
 }
