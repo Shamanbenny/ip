@@ -149,8 +149,8 @@ public class Ui {
         StringBuilder output = new StringBuilder("""
                 [ Night Code Command Guide ]
                 Need a hand? No problem! Here's what I can do for you:
-                
                 """);
+        output.append("\n");
 
         for (CommandHelp cmd : CommandHelp.values()) {
             output.append(cmd.getSyntax()).append("\n").append("- ").append(cmd.getDescription()).append("\n\n");

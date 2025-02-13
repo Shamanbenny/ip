@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TaskListTest {
     // Storage is instantiated but never used in the following tests
-    private final TaskList TASK_LIST = new TaskList(new Storage("", ""));
+    private final TaskList taskList = new TaskList(new Storage("", ""));
 
     @Test
     public void parseDate_all20thOfEachMonth_returnsFormattedDateString() {
@@ -19,15 +19,15 @@ public class TaskListTest {
 
         for (int month = 1; month <= 12; month++) {
             String inputDate = String.format("2025-%02d-20", month);
-            assertEquals(expectedDates[month - 1], TASK_LIST.parseDate(inputDate),
+            assertEquals(expectedDates[month - 1], this.taskList.parseDate(inputDate),
                     "Failed at month: " + month);
         }
     }
 
     @Test
     public void parseDate_invalidDate_returnsInputString() {
-        assertEquals("0000-00-00", TASK_LIST.parseDate("0000-00-00"));
-        assertEquals("2025-03-20 15:00", TASK_LIST.parseDate("2025-03-20 15:00"));
-        assertEquals("Tonight", TASK_LIST.parseDate("Tonight"));
+        assertEquals("0000-00-00", this.taskList.parseDate("0000-00-00"));
+        assertEquals("2025-03-20 15:00", this.taskList.parseDate("2025-03-20 15:00"));
+        assertEquals("Tonight", this.taskList.parseDate("Tonight"));
     }
 }
