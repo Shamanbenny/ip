@@ -49,7 +49,7 @@ public class Main extends Application {
                 this.nightCoder.saveTasksOnClose();
             });
 
-            fxmlLoader.<MainWindow>getController().setNightCoder(this.nightCoder);  // inject the Duke instance
+            fxmlLoader.<MainWindow>getController().setNightCoder(this.nightCoder); // inject the Duke instance
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

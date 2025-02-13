@@ -19,7 +19,7 @@ import nightcoder.ui.Ui;
  */
 public class TaskList {
     private ArrayList<Task> tasks;
-    private final Storage STORAGE;
+    private final Storage storage;
     private final DateTimeFormatter INPUT_DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private final DateTimeFormatter OUTPUT_DATE_FORMAT = DateTimeFormatter.ofPattern("MMM dd yyyy");
 
@@ -30,7 +30,7 @@ public class TaskList {
      */
     public TaskList(Storage storage) {
         this.tasks = new ArrayList<>();
-        this.STORAGE = storage;
+        this.storage = storage;
     }
 
     /**
@@ -67,7 +67,7 @@ public class TaskList {
      * Loads tasks from the storage file and converts them into {@code ArrayList<Task>}.
      */
     public void loadTasks() {
-        this.tasks = this.STORAGE.loadTasks();
+        this.tasks = this.storage.loadTasks();
     }
 
     /**
@@ -98,7 +98,7 @@ public class TaskList {
         Task task = new ToDo(description, false);
         this.tasks.add(task);
         try {
-            this.STORAGE.appendTask("T|0|" + description);
+            this.storage.appendTask("T|0|" + description);
             return Ui.getTaskAdded(description, this.size());
         } catch (IOException e) {
             return "[ Task #" + this.size() + " Added: " + description + " ]\n" + Ui.getErrorUpdatingTasksFile(e);
@@ -119,7 +119,7 @@ public class TaskList {
         Task task = new Deadline(description, false, parsedDueBy);
         this.tasks.add(task);
         try {
-            this.STORAGE.appendTask("D|0|" + description + "|" + parsedDueBy);
+            this.storage.appendTask("D|0|" + description + "|" + parsedDueBy);
             return Ui.getTaskAdded(description, this.size());
         } catch (IOException e) {
             return "[ Task #" + this.size() + " Added: " + description + " ]\n" + Ui.getErrorUpdatingTasksFile(e);
@@ -142,7 +142,7 @@ public class TaskList {
         Task task = new Event(description, false, parsedStartTime, parsedEndTime);
         this.tasks.add(task);
         try {
-            this.STORAGE.appendTask("E|0|" + description + "|" + parsedStartTime + "|" + parsedEndTime);
+            this.storage.appendTask("E|0|" + description + "|" + parsedStartTime + "|" + parsedEndTime);
             return Ui.getTaskAdded(description, this.size());
         } catch (IOException e) {
             return "[ Task #" + this.size() + " Added: " + description + " ]\n" + Ui.getErrorUpdatingTasksFile(e);
@@ -209,7 +209,7 @@ public class TaskList {
             lines.add(task.getStringFormat());
         }
         try {
-            this.STORAGE.writeLines(lines);
+            this.storage.writeLines(lines);
         } catch (IOException e) {
             Ui.getErrorUpdatingTasksFile(e);
         }

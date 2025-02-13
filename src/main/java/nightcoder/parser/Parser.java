@@ -14,8 +14,8 @@ import nightcoder.ui.Ui;
  * @version 10
  */
 public class Parser {
-    private final Storage STORAGE;
-    private final TaskList TASKS;
+    private final Storage storage;
+    private final TaskList tasks;
 
     /**
      * Constructs a {@code Parser} with the necessary dependencies.
@@ -24,8 +24,8 @@ public class Parser {
      * @param tasks   The {@code TaskList} containing the list of tasks.
      */
     public Parser(Storage storage, TaskList tasks) {
-        this.STORAGE = storage;
-        this.TASKS = tasks;
+        this.storage = storage;
+        this.tasks = tasks;
     }
 
     /**
@@ -47,7 +47,7 @@ public class Parser {
                 return Ui.getInvalidUsage("todo");
             }
             String todoParams = parts[1];
-            return this.TASKS.addToDo(todoParams.trim());
+            return this.tasks.addToDo(todoParams.trim());
         case "deadline":
             if (parts.length != 2) {
                 return Ui.getInvalidUsage("deadline");
@@ -65,7 +65,7 @@ public class Parser {
             // Correct Usage from here...
             String deadlineDescription = deadlineParts[0];
             String deadlineBy = deadlineParts[1];
-            return this.TASKS.addDeadline(deadlineDescription.trim(), deadlineBy.trim());
+            return this.tasks.addDeadline(deadlineDescription.trim(), deadlineBy.trim());
         case "event":
             if (parts.length != 2) {
                 return Ui.getInvalidUsage("event");
@@ -91,9 +91,9 @@ public class Parser {
                 return Ui.getInvalidUsage("event");
             }
             // Correct Usage from here...
-            return this.TASKS.addEvent(eventDescription.trim(), fromParams.trim(), toParams.trim());
+            return this.tasks.addEvent(eventDescription.trim(), fromParams.trim(), toParams.trim());
         case "list":
-            return this.TASKS.listTasks();
+            return this.tasks.listTasks();
         case "mark":
             if (parts.length != 2) {
                 return Ui.getInvalidUsage("mark");
@@ -135,7 +135,7 @@ public class Parser {
                 return Ui.getInvalidUsage("find");
             }
             String findParams = parts[1];
-            return this.TASKS.listTasks(findParams);
+            return this.tasks.listTasks(findParams);
         default:
             return """
                     [ Oops! ]
@@ -156,7 +156,7 @@ public class Parser {
      */
     private String setCompleted(int idx, boolean isCompleted) {
         // Edge-Case ['idx' out of bounds]
-        if (idx > this.TASKS.size() || idx < 1) {
+        if (idx > this.tasks.size() || idx < 1) {
             return """
                     [ Invalid Task Number! ]
                     Hmm, that number doesn't match any tasks on your list.
@@ -165,7 +165,7 @@ public class Parser {
 
         StringBuilder output = new StringBuilder();
         // idx is originally 1-indexed [Therefore minus 1 to access 0-indexed ListArray]
-        Task task = this.TASKS.get(idx - 1);
+        Task task = this.tasks.get(idx - 1);
         if (task.isCompleted() == isCompleted) {
             // Edge-Case ['task' is already set as complete/incomplete]
             if (isCompleted) {
@@ -178,7 +178,7 @@ public class Parser {
         } else {
             task.setCompleted(isCompleted);
             try {
-                this.STORAGE.setCompleted(idx - 1, isCompleted); // Convert to zero-based index
+                this.storage.setCompleted(idx - 1, isCompleted); // Convert to zero-based index
                 if (isCompleted) {
                     output.append("[ Task Marked as Complete! ]\nGreat job! Task \"").append(task.getDescription());
                     output.append("\" is now marked as done. On to the next one!");
@@ -208,7 +208,7 @@ public class Parser {
      */
     private String deleteTask(int idx) {
         // Edge-Case ['idx' out of bounds]
-        if (idx > this.TASKS.size() || idx < 1) {
+        if (idx > this.tasks.size() || idx < 1) {
             return """
                     [ Invalid Task Number! ]
                     Hmm, that number doesn't match any tasks on your list.
@@ -216,9 +216,9 @@ public class Parser {
         }
 
         // idx is originally 1-indexed [Therefore minus 1 to access 0-indexed ListArray]
-        Task task = this.TASKS.remove(idx - 1);
+        Task task = this.tasks.remove(idx - 1);
         try {
-            this.STORAGE.deleteTask(idx - 1);
+            this.storage.deleteTask(idx - 1);
         } catch (IOException e) {
             return "[ Task Deleted! ]\n" + Ui.getErrorUpdatingTasksFile(e);
         }

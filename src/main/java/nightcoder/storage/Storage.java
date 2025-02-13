@@ -42,7 +42,7 @@ public class Storage {
      * Reads all lines from the file and returns them as a list of Strings.
      *
      * @return An {@code ArrayList} containing all task entries from the file.
-     * Returns an empty list if the file does not exist or an error occurs.
+     *     Returns an empty list if the file does not exist or an error occurs.
      */
     public ArrayList<String> readLines() {
         File file = new File(this.DATA_FOLDER + "/" + this.TASKS_FILE);
@@ -110,6 +110,8 @@ public class Storage {
         }
         String description = parts[2];
 
+        // "Incorrect" indentation by Style Checker due to the use of "return".
+        // It should, in theory, be of the correct indentation.
         return switch (type) {
             case "T" -> new ToDo(description, isCompleted);
             case "D" -> {
