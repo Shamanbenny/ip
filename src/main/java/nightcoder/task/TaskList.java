@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import nightcoder.storage.Storage;
 import nightcoder.ui.Ui;
@@ -157,17 +159,13 @@ public class TaskList {
      */
     public String listTasks() {
         if (this.tasks.isEmpty()) {
-            String output = "[ Your To-Do List is Empty! ]\n";
-            output += "Looks like we're starting with a clean slate. What shall we tackle first?";
-            return output;
-        } else {
-            StringBuilder output = new StringBuilder();
-            for (int idx = 0; idx < this.size(); idx++) {
-                Task task = this.tasks.get(idx);
-                output.append(idx + 1).append(".").append(task).append("\n");
-            }
-            return output.toString();
+            return "[ Your To-Do List is Empty! ]\n"
+                    + "Looks like we're starting with a clean slate. What shall we tackle first?";
         }
+        // Functional Programming using Streams learnt from CS2030S
+        return IntStream.range(0, tasks.size())
+                .mapToObj(idx -> (idx + 1) + "." + tasks.get(idx))
+                .collect(Collectors.joining("\n"));
     }
 
     /**
@@ -178,25 +176,17 @@ public class TaskList {
      */
     public String listTasks(String keyword) {
         if (this.tasks.isEmpty()) {
-            String output = "[ Your To-Do List is Empty! ]\n";
-            output += "Looks like we're starting with a clean slate. What shall we tackle first?";
-            return output;
-        } else {
-            boolean isFound = false;
-            StringBuilder output = new StringBuilder();
-            for (int idx = 0; idx < this.size(); idx++) {
-                Task task = this.tasks.get(idx);
-                if (task.getDescription().toLowerCase().contains(keyword.toLowerCase())) {
-                    output.append(idx + 1).append(".").append(task).append("\n");
-                    isFound = true;
-                }
-            }
-            if (!isFound) {
-                output.append("[ No match found! ]").append("\n");
-                output.append("Looks like the tasks you're trying to find doesn't exist. Anything else?");
-            }
-            return output.toString();
+            return "[ Your To-Do List is Empty! ]\n"
+                    + "Looks like we're starting with a clean slate. What shall we tackle first?";
         }
+        // Functional Programming using Streams learnt from CS2030S
+        String result = IntStream.range(0, tasks.size())
+                .filter(idx -> tasks.get(idx).getDescription().toLowerCase().contains(keyword.toLowerCase()))
+                .mapToObj(idx -> (idx + 1) + "." + tasks.get(idx))
+                .collect(Collectors.joining("\n"));
+        return result.isEmpty()
+                ? "[ No match found! ]\nLooks like the tasks you're trying to find doesn't exist. Anything else?"
+                : result;
     }
 
     /**
