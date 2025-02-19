@@ -49,49 +49,9 @@ public class Parser {
             String todoParams = parts[1];
             return this.tasks.addToDo(todoParams.trim());
         case "deadline":
-            if (parts.length != 2) {
-                return Ui.getInvalidUsage("deadline");
-            }
-            String deadlineParams = parts[1];
-            if (!deadlineParams.contains(" /by ")) {
-                // Missing "/by"
-                return Ui.getInvalidUsage("deadline");
-            }
-            String[] deadlineParts = deadlineParams.split(" /by ", 2);
-            if (deadlineParts.length < 2 || deadlineParts[0].trim().isEmpty() || deadlineParts[1].trim().isEmpty()) {
-                // Missing details for task description, "/by", or empty "/by" details.
-                return Ui.getInvalidUsage("deadline");
-            }
-            // Correct Usage from here...
-            String deadlineDescription = deadlineParts[0];
-            String deadlineBy = deadlineParts[1];
-            return this.tasks.addDeadline(deadlineDescription.trim(), deadlineBy.trim());
+            return parseDeadline(parts);
         case "event":
-            if (parts.length != 2) {
-                return Ui.getInvalidUsage("event");
-            }
-            String eventParams = parts[1];
-            if (!eventParams.contains(" /from ") || !eventParams.contains(" /to ")) {
-                // Missing "/from" or "/to"
-                return Ui.getInvalidUsage("event");
-            }
-            int fromIdx = eventParams.indexOf(" /from ");
-            int toIdx = eventParams.indexOf(" /to ");
-            String eventDescription = eventParams.split(" /from | /to ", 2)[0];
-            String fromParams = "";
-            String toParams = "";
-            if (fromIdx < toIdx) {
-                fromParams = eventParams.substring(fromIdx + 7, toIdx);
-                toParams = eventParams.substring(toIdx + 5);
-            } else {
-                fromParams = eventParams.substring(fromIdx + 7);
-                toParams = eventParams.substring(toIdx + 5, fromIdx);
-            }
-            if (eventDescription.trim().isEmpty() || fromParams.trim().isEmpty() || toParams.trim().isEmpty()) {
-                return Ui.getInvalidUsage("event");
-            }
-            // Correct Usage from here...
-            return this.tasks.addEvent(eventDescription.trim(), fromParams.trim(), toParams.trim());
+            return parseEvent(parts);
         case "list":
             return this.tasks.listTasks();
         case "mark":
@@ -145,6 +105,68 @@ public class Parser {
     }
 
     /**
+     * Parses and processes the command for adding a deadline task.
+     * If the format is incorrect, it returns an error message.
+     *
+     * @param parts The command split into parts, where `parts[0]` is "deadline".
+     * @return The String message indicating the result of parsing and adding the deadline task.
+     */
+    private String parseDeadline(String[] parts) {
+        if (parts.length != 2) {
+            return Ui.getInvalidUsage("deadline");
+        }
+        String deadlineParams = parts[1];
+        if (!deadlineParams.contains(" /by ")) {
+            // Missing "/by"
+            return Ui.getInvalidUsage("deadline");
+        }
+        String[] deadlineParts = deadlineParams.split(" /by ", 2);
+        if (deadlineParts.length < 2 || deadlineParts[0].trim().isEmpty() || deadlineParts[1].trim().isEmpty()) {
+            // Missing details for task description, "/by", or empty "/by" details.
+            return Ui.getInvalidUsage("deadline");
+        }
+        // Correct Usage from here...
+        String deadlineDescription = deadlineParts[0];
+        String deadlineBy = deadlineParts[1];
+        return this.tasks.addDeadline(deadlineDescription.trim(), deadlineBy.trim());
+    }
+
+    /**
+     * Parses and processes the command for adding an event task.
+     * If the format is incorrect, it returns an error message.
+     *
+     * @param parts The command split into parts, where `parts[0]` is "event".
+     * @return The String message indicating the result of parsing and adding the event task.
+     */
+    private String parseEvent(String[] parts) {
+        if (parts.length != 2) {
+            return Ui.getInvalidUsage("event");
+        }
+        String eventParams = parts[1];
+        if (!eventParams.contains(" /from ") || !eventParams.contains(" /to ")) {
+            // Missing "/from" or "/to"
+            return Ui.getInvalidUsage("event");
+        }
+        int fromIdx = eventParams.indexOf(" /from ");
+        int toIdx = eventParams.indexOf(" /to ");
+        String eventDescription = eventParams.split(" /from | /to ", 2)[0];
+        String fromParams = "";
+        String toParams = "";
+        if (fromIdx < toIdx) {
+            fromParams = eventParams.substring(fromIdx + 7, toIdx);
+            toParams = eventParams.substring(toIdx + 5);
+        } else {
+            fromParams = eventParams.substring(fromIdx + 7);
+            toParams = eventParams.substring(toIdx + 5, fromIdx);
+        }
+        if (eventDescription.trim().isEmpty() || fromParams.trim().isEmpty() || toParams.trim().isEmpty()) {
+            return Ui.getInvalidUsage("event");
+        }
+        // Correct Usage from here...
+        return this.tasks.addEvent(eventDescription.trim(), fromParams.trim(), toParams.trim());
+    }
+
+    /**
      * Updates the completion status of a task in the to-do list.
      * Marks a specified task as completed or incomplete based on the given parameters.
      * If the provided index is invalid (not in the range of the task list), it displays an error message.
@@ -167,34 +189,56 @@ public class Parser {
         // idx is originally 1-indexed [Therefore minus 1 to access 0-indexed ListArray]
         Task task = this.tasks.get(idx - 1);
         if (task.isCompleted() == isCompleted) {
-            // Edge-Case ['task' is already set as complete/incomplete]
-            if (isCompleted) {
-                output.append("[ Task Already Complete! ]\nLooks like task \"").append(task.getDescription());
-                output.append("\" is already marked as done. You're ahead of the game!");
-            } else {
-                output.append("[ Task Already Incomplete ]!\nTask \"").append(task.getDescription());
-                output.append("\" is already on your to-do list. No need to unmark it again!");
-            }
+            output.append(getAlreadySetMessage(task, isCompleted));
         } else {
-            task.setCompleted(isCompleted);
-            try {
-                this.storage.setCompleted(idx - 1, isCompleted); // Convert to zero-based index
-                if (isCompleted) {
-                    output.append("[ Task Marked as Complete! ]\nGreat job! Task \"").append(task.getDescription());
-                    output.append("\" is now marked as done. On to the next one!");
-                } else {
-                    output.append("[ Task Marked as Incomplete! ]\nGot it! Task \"").append(task.getDescription());
-                    output.append("\" is back on your to-do list. Let's tackle it when you're ready!");
-                }
-            } catch (IOException e) {
-                if (isCompleted) {
-                    output.append("[ Task Marked as Complete! ]\n");
-                } else {
-                    output.append("[ Task Marked as Incomplete! ]\n");
-                }
-                output.append(Ui.getErrorUpdatingTasksFile(e));
-            }
+            output.append(updateTaskCompletion(task, idx, isCompleted));
         }
+        return output.toString();
+    }
+
+    /**
+     * Returns the message when the task is already set to the desired completion status.
+     *
+     * @param task The task whose status is being checked.
+     * @param isCompleted {@code true} if checking for already completed status, {@code false} otherwise.
+     * @return The String message indicating that the task is already in the desired state.
+     */
+    private String getAlreadySetMessage(Task task, boolean isCompleted) {
+        if (isCompleted) {
+            return "[ Task Already Complete! ]\nLooks like task \"" + task.getDescription()
+                    + "\" is already marked as done. You're ahead of the game!";
+        } else {
+            return "[ Task Already Incomplete! ]\nTask \"" + task.getDescription()
+                    + "\" is already on your to-do list. No need to unmark it again!";
+        }
+    }
+
+    /**
+     * Updates the task completion status and returns the corresponding message.
+     * Attempts to persist the updated status to storage. If an error occurs,
+     * it appends the error message.
+     *
+     * @param task The task to update.
+     * @param idx The 1-based index of the task in the task list.
+     * @param isCompleted {@code true} to mark as completed, {@code false} to mark as incomplete.
+     * @return The String message indicating the result of updating the task completion status.
+     */
+    private String updateTaskCompletion(Task task, int idx, boolean isCompleted) {
+        StringBuilder output = new StringBuilder();
+        task.setCompleted(isCompleted);
+
+        try {
+            this.storage.setCompleted(idx - 1, isCompleted); // Convert to zero-based index
+            output.append(isCompleted ? "[ Task Marked as Complete! ]\nGreat job! Task \"" :
+                    "[ Task Marked as Incomplete! ]\nGot it! Task \"");
+            output.append(task.getDescription()).append(isCompleted ? "\" is now marked as done. On to the next one!" :
+                    "\" is back on your to-do list. Let's tackle it when you're ready!");
+        } catch (IOException e) {
+            output.append(isCompleted ? "[ Task Marked as Complete! ]\n" :
+                    "[ Task Marked as Incomplete! ]\n");
+            output.append(Ui.getErrorUpdatingTasksFile(e));
+        }
+
         return output.toString();
     }
 
