@@ -78,7 +78,7 @@ public class Ui {
         case 1:
             return "Ah, there you are! The moon is bright, the code is flowing, and caffeine-wait, I mean "
                     + "motivation-fuels our mission tonight.\n\n"
-                    + "Welcome back to Night Coder, your loyal (and slightly sleep-deprived) coding companion. "
+                    + "Welcome back to Night Coder, your loyal (and slightly sleep-deprived) coding companion! "
                     + "Whether it's wrangling deadlines, or organizing your todo list, I'm here to lend a hand.";
         case 2:
             return "Let's make some magic together. What's on the docket tonight?\n\n"
