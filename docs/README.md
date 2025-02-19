@@ -4,9 +4,24 @@
 
 `NightCoder` is your playful and motivational coding companion for late-night sessions. With a vibrant personality and powerful task management features, nightcoder.NightCoder is here to keep you organized, inspired, and focused.
 
+<img src="./Ui.png" alt="NightCoder UI" height="500"/>
+
 ---
 
 ## Features Overview
+
+### Command Quick Reference Table
+
+| Command                                         | Usage Example                                                                                                  |
+|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| **[Help](#getting-help)**                       | `help`                                                                                                         |
+| **[To-Do](#adding-to-dos)**                     | `todo <task description>` <br> _Example:_ `todo Finish the project report`                                     |
+| **[Deadline](#adding-deadlines)**               | `deadline <task description> /by <due date>` <br> _Example:_ `deadline Submit assignment /by 2025-01-30 23:59` |
+| **[Event](#adding-events)**                     | `event <description> /from <start> /to <end>` <br> _Example:_ `event Team meeting /from 3:00 PM /to 4:00 PM`   |
+| **[List Tasks](#viewing-your-to-do-list)**      | `list`                                                                                                         |
+| **[Mark Task](#marking-tasks-as-complete)**     | `mark <task number>` <br> _Example:_ `mark 1`                                                                  |
+| **[Unmark Task](#marking-tasks-as-incomplete)** | `unmark <task number>` <br> _Example:_ `unmark 1`                                                              |
+| **[Delete Task](#deleting-tasks)**              | `delete <task number>` <br> _Example:_ `delete 2`                                                              |
 
 ### Getting Help
 Access a quick reference guide for all available commands.
