@@ -1,8 +1,8 @@
 # NightCoder User Guide
 
-## Welcome to `nightcoder.NightCoder`
+## Welcome to `NightCoder`
 
-`nightcoder.NightCoder` is your playful and motivational coding companion for late-night sessions. With a vibrant personality and powerful task management features, nightcoder.NightCoder is here to keep you organized, inspired, and focused.
+`NightCoder` is your playful and motivational coding companion for late-night sessions. With a vibrant personality and powerful task management features, nightcoder.NightCoder is here to keep you organized, inspired, and focused.
 
 ---
 
@@ -23,11 +23,12 @@ help
 
 **Expected Outcome:**
 ```
-	[ Night Code Command Guide ]
-	Need a hand? No problem! Here's what I can do for you:
-	    help
-	    - Prints this handy guide. Because even pros need reminders sometimes.
-	    ...
+[ Night Code Command Guide ]
+Need a hand? No problem! Here's what I can do for you:
+    
+help
+- Prints this handy guide. Because even pros need reminders sometimes.
+...
 ```
 
 ---
@@ -47,8 +48,8 @@ todo Finish the project report
 
 **Expected Outcome:**
 ```
-	[ nightcoder.task.Task #1 Added: Finish the project report ]
-	Got it! I'll keep this safe in your to-do list. Let me know what's next!
+[ Task #1 Added: Finish the project report ]
+Got it! I'll keep this safe in your to-do list. Let me know what's next!
 ```
 
 ---
@@ -68,8 +69,8 @@ deadline Submit assignment /by 2025-01-30 23:59
 
 **Expected Outcome:**
 ```
-	[ nightcoder.task.Task #2 Added: Submit assignment ]
-	Got it! I'll keep this safe in your to-do list. Let me know what's next!
+[ Task #2 Added: Submit assignment ]
+Got it! I'll keep this safe in your to-do list. Let me know what's next!
 ```
 
 ---
@@ -89,8 +90,8 @@ event Team meeting /from 2025-01-21 3:00 PM /to 2025-01-21 4:00 PM
 
 **Expected Outcome:**
 ```
-	[ nightcoder.task.Task #3 Added: Team meeting ]
-	Got it! I'll keep this safe in your to-do list. Let me know what's next!
+[ Task #3 Added: Team meeting ]
+Got it! I'll keep this safe in your to-do list. Let me know what's next!
 ```
 
 ---
@@ -110,9 +111,9 @@ list
 
 **Expected Outcome:**
 ```
-	1. [T][ ] Finish the project report
-	2. [D][ ] Submit assignment (by: 2025-01-30 23:59)
-	3. [E][ ] Team meeting (from: 2025-01-21 3:00 PM to: 2025-01-21 4:00 PM)
+1. [T][ ] Finish the project report
+2. [D][ ] Submit assignment (by: 2025-01-30 23:59)
+3. [E][ ] Team meeting (from: 2025-01-21 3:00 PM to: 2025-01-21 4:00 PM)
 ```
 
 ---
@@ -132,8 +133,8 @@ mark 1
 
 **Expected Outcome:**
 ```
-	[ nightcoder.task.Task Marked as Complete! ]
-	Great job! nightcoder.task.Task "Finish the project report" is now marked as done. On to the next one!
+[ Task Marked as Complete! ]
+Great job! Task "Finish the project report" is now marked as done. On to the next one!
 ```
 
 ---
@@ -153,8 +154,8 @@ unmark 1
 
 **Expected Outcome:**
 ```
-	[ nightcoder.task.Task Marked as Incomplete! ]
-	Got it! nightcoder.task.Task "Finish the project report" is back on your to-do list. Let's tackle it when you're ready!
+[ Task Marked as Incomplete! ]
+Got it! Task "Finish the project report" is back on your to-do list. Let's tackle it when you're ready!
 ```
 
 ---
@@ -174,12 +175,12 @@ delete 2
 
 **Expected Outcome:**
 ```
-	[ nightcoder.task.Task Deleted! ]
-	nightcoder.task.Task "Submit assignment" has been removed from your list. Poof, it's gone! Let me know if there's anything else to tidy up.
+[ Task Deleted! ]
+Task "Submit assignment" has been removed from your list. Poof, it's gone! Let me know if there's anything else to tidy up.
 ```
 
 ---
 
 ## Summary
-`nightcoder.NightCoder` simplifies task management while keeping your coding spirits high. Whether you're organizing deadlines or clearing your to-do list, nightcoder.NightCoder is always here to assist. Happy coding!
+`NightCoder` simplifies task management while keeping your coding spirits high. Whether you're organizing deadlines or clearing your to-do list, NightCoder is always here to assist. Happy coding!
 
