@@ -8,11 +8,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nightcoder.javafx.MainWindow">
     <children>
+      <Button fx:id="themeToggleButton" layoutX="5.0" layoutY="8.0" mnemonicParsing="false" onAction="#toggleTheme" prefHeight="25.0" prefWidth="120.0" text="Light Mode" />
+      <Button fx:id="clearChatButton" layoutX="131.0" layoutY="8.0" mnemonicParsing="false" onAction="#clearChat" prefHeight="25.0" prefWidth="120.0" text="Clear Chat" />
         <TextField fx:id="userInput" layoutY="558.0" onAction="#handleUserInput" prefHeight="41.0" prefWidth="910.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" />
         <Button fx:id="sendButton" layoutX="524.0" layoutY="758.0" mnemonicParsing="false" onAction="#handleUserInput" prefHeight="41.0" prefWidth="76.0" text="Send" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hvalue="1.0" prefHeight="743.0" prefWidth="590.0" vvalue="1.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hvalue="1.0" layoutY="52.0" prefHeight="696.0" prefWidth="992.0" vvalue="1.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="52.0">
             <content>
-                <VBox fx:id="dialogContainer" prefHeight="738.0" prefWidth="975.0" />
+                <VBox fx:id="dialogContainer" prefHeight="694.0" prefWidth="991.0" />
             </content>
         </ScrollPane>
     </children>
