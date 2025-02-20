@@ -229,13 +229,13 @@ public class Parser {
 
         try {
             this.storage.setCompleted(idx - 1, isCompleted); // Convert to zero-based index
-            output.append(isCompleted ? "[ Task Marked as Complete! ]\nGreat job! Task \"" :
-                    "[ Task Marked as Incomplete! ]\nGot it! Task \"");
-            output.append(task.getDescription()).append(isCompleted ? "\" is now marked as done. On to the next one!" :
-                    "\" is back on your to-do list. Let's tackle it when you're ready!");
+            output.append(isCompleted ? "[ Task Marked as Complete! ]\nGreat job! Task \""
+                    : "[ Task Marked as Incomplete! ]\nGot it! Task \"");
+            output.append(task.getDescription()).append(isCompleted ? "\" is now marked as done. On to the next one!"
+                    : "\" is back on your to-do list. Let's tackle it when you're ready!");
         } catch (IOException e) {
-            output.append(isCompleted ? "[ Task Marked as Complete! ]\n" :
-                    "[ Task Marked as Incomplete! ]\n");
+            output.append(isCompleted ? "[ Task Marked as Complete! ]\n"
+                    : "[ Task Marked as Incomplete! ]\n");
             output.append(Ui.getErrorUpdatingTasksFile(e));
         }
 

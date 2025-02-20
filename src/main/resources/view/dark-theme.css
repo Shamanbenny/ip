@@ -1,0 +1,28 @@
+.root {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+}
+
+.text-field {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-border-color: gray;
+}
+
+.scroll-pane {
+    -fx-background: #2b2b2b;
+}
+
+.dialog-container {
+    -fx-background-color: #2b2b2b;
+}
+
+.bot-dialog {
+    -fx-background-color: rgba(50, 100, 150, 0.3); /* Darker blue */
+    -fx-padding: 15px 0 15px 5px;
+}

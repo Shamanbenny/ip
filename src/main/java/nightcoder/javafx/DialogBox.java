@@ -58,9 +58,9 @@ public class DialogBox extends HBox {
         Collections.reverse(tmp);
         getChildren().setAll(tmp);
         setAlignment(Pos.TOP_LEFT);
-        this.setStyle("-fx-background-color: rgba(108, 170, 209, 0.15); ");
         this.dialog.setAlignment(Pos.TOP_LEFT);
         this.dialog.setTextAlignment(TextAlignment.LEFT);
+        this.getStyleClass().add("bot-dialog");
     }
 
     /**

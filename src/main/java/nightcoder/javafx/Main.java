@@ -1,6 +1,7 @@
 package nightcoder.javafx;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -35,6 +36,10 @@ public class Main extends Application {
             Scene scene = new Scene(ap);
             stage.setScene(scene);
 
+            // Apply Light Theme as default
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/view/light-theme.css"))
+                    .toExternalForm());
+
             // Set property
             stage.setTitle("NightCoder");
             stage.getIcons().add(fevicon);
@@ -49,6 +54,7 @@ public class Main extends Application {
                 this.nightCoder.saveTasksOnClose();
             });
 
+            fxmlLoader.<MainWindow>getController().setScene(scene); // Inject the Scene instance
             fxmlLoader.<MainWindow>getController().setNightCoder(this.nightCoder); // inject the Duke instance
             stage.show();
         } catch (IOException e) {

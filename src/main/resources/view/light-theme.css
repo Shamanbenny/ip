@@ -1,0 +1,28 @@
+.root {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.button {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-border-color: gray;
+}
+
+.scroll-pane {
+    -fx-background: white;
+}
+
+.dialog-container {
+    -fx-background-color: white;
+}
+
+.bot-dialog {
+    -fx-background-color: rgba(108, 170, 209, 0.15); /* Light blue */
+    -fx-padding: 15px 0 15px 5px;
+}
