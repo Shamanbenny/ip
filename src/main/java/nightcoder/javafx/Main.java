@@ -44,10 +44,10 @@ public class Main extends Application {
             stage.setTitle("NightCoder");
             stage.getIcons().add(fevicon);
             stage.setResizable(false);
-            stage.setMinHeight(800.0);
-            stage.setMaxHeight(800.0);
-            stage.setMinWidth(1000.0);
-            stage.setMaxWidth(1000.0);
+            stage.setMinHeight(700.0);
+            stage.setMaxHeight(700.0);
+            stage.setMinWidth(800.0);
+            stage.setMaxWidth(800.0);
 
             // Set on window close event
             stage.setOnCloseRequest((event) -> {

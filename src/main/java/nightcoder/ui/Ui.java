@@ -19,21 +19,21 @@ public class Ui {
     private enum CommandHelp {
         HELP("help", "Prints this handy guide. Because even pros need reminders sometimes."),
         TODO("todo <String>", "Adds a to-do task to your list. Just tell me what needs doing, "
-                + "and I'll keep track.\n\tExample: todo Finish the project report"),
+                + "and I'll keep track.\n  E.g.: todo Finish the project report"),
         DEADLINE("deadline <String> /by <String>", "Adds a task with a deadline. Perfect for those "
-                + "time-sensitive missions!\n\tExample: deadline Submit assignment /by 2025-01-30 23:59"),
+                + "time-sensitive missions!\n  E.g.: deadline Submit assignment /by 2025-01-30 23:59"),
         EVENT("event <String> /from <String> /to <String>", "Adds an event with a start and "
-                + "end time. Keep your schedule sharp!\n\tExample: event Team meeting /from 2025-01-21 3:00 PM "
+                + "end time. Keep your schedule sharp!\n  E.g.: event Team meeting /from 2025-01-21 3:00 PM "
                 + "/to 2025-01-21 4:00 PM"),
         LIST("list", "Shows all your tasks. Think of it as your personal task constellation."),
         FIND("find <String>", "Find specific keyword amongst your list of tasks. I'll do the work of finding "
-                + "it for you!\n\tExample: find homework"),
+                + "it for you!\n  E.g.: find homework"),
         MARK("mark <int>", "Marks a task as complete. Use the task number from the list.\n"
-                + "\tExample: mark 1"),
+                + "  E.g.: mark 1"),
         UNMARK("unmark <int>", "Marks a task as incomplete. Sometimes things need a second look!\n"
-                + "\tExample: unmark 1"),
+                + "  E.g.: unmark 1"),
         DELETE("delete <int>", "Deletes a task from your to-do list. Use the task number from "
-                + "the list.\n\tExample: delete 2");
+                + "the list.\n  E.g.: delete 2");
 
         private final String SYNTAX;
         private final String DESCRIPTION;
