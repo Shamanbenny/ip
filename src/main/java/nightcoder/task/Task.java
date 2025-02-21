@@ -28,7 +28,8 @@ public abstract class Task {
     public abstract String getStringFormat();
 
     public String getDescription() {
-        assert this.DESCRIPTION != null && !this.DESCRIPTION.trim().isEmpty() : "Task description should never be null or empty";
+        assert this.DESCRIPTION != null && !this.DESCRIPTION.trim().isEmpty()
+                : "Task description should never be null or empty";
         return this.DESCRIPTION;
     }
 
@@ -57,7 +58,8 @@ public abstract class Task {
      */
     @Override
     public String toString() {
-        assert this.DESCRIPTION != null && !this.DESCRIPTION.trim().isEmpty() : "Task description should not be null or empty in toString";
+        assert this.DESCRIPTION != null && !this.DESCRIPTION.trim().isEmpty()
+                : "Task description should not be null or empty in toString";
         return ((this.isCompleted) ? "[X] " : "[ ] ") + this.DESCRIPTION;
     }
 }
