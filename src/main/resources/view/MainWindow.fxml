@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nightcoder.javafx.MainWindow">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nightcoder.javafx.MainWindow">
     <children>
       <Button fx:id="themeToggleButton" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" onAction="#toggleTheme" prefHeight="25.0" prefWidth="120.0" text="Light Mode" />
       <Button fx:id="clearChatButton" layoutX="130.0" layoutY="5.0" mnemonicParsing="false" onAction="#clearChat" prefHeight="25.0" prefWidth="120.0" text="Clear Chat" />
